@@ -225,7 +225,7 @@
       }).join('');
     }
 
-    fetch('_data/hotels.json')
+    fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/hotels.json')
       .then(r => r.json())
       .then(data => {
         hotelsData = data;

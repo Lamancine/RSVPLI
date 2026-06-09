@@ -258,7 +258,7 @@
       `).join('');
     }
 
-    fetch('_data/faq.json')
+    fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/faq.json')
       .then(r => r.json())
       .then(data => {
         faqData = data;
