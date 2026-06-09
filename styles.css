@@ -610,11 +610,11 @@ button {
 }
 
 .story-content h2 {
-  font-size: 40px;
+  font-size: 34px;
   border: none;
   margin-bottom: 50px;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: var(--ink);
   padding-bottom: 0;
 }
