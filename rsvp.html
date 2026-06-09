@@ -206,8 +206,7 @@
       const timeDiff = weddingDate.getTime() - now.getTime();
       if (timeDiff <= 0) { countdownEl.textContent = 'The Wedding Day!'; return; }
       const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-      const daysText = (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage]) ? (pageTranslations[currentLanguage]['days_to_go'] || 'days') : 'days';
-      countdownEl.textContent = days + ' ' + daysText;
+      countdownEl.textContent = 'THE FINAL COUNTDOWN : ' + days + ' days';
     }
     calculateAndUpdateCountdown();
     setInterval(calculateAndUpdateCountdown, 60000);

@@ -748,13 +748,7 @@
       
       const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
       
-      // Get the days_to_go text from loaded translations
-      let daysText = 'DAYS TO GO!';
-      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
-        daysText = pageTranslations[currentLanguage]['days_to_go'];
-      }
-      
-      countdownEl.textContent = days + ' ' + daysText;
+      countdownEl.textContent = 'THE FINAL COUNTDOWN : ' + days + ' days';
     }
 
     // Wait for translations to load, then start countdown
