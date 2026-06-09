@@ -249,6 +249,12 @@ async function handleVerificationClick() {
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function() {
+  // If there's a Netlify Identity token in the URL hash, let the widget handle it
+  const hash = window.location.hash || "";
+  if (hash.includes("invite_token") || hash.includes("confirmation_token") || hash.includes("recovery_token")) {
+    return;
+  }
+
   // Check if already verified
   if (isGuestVerified()) {
     window.location.href = "index.html";
