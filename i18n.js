@@ -17,6 +17,7 @@ const pageTranslations = {
     nav_venue: "Venue",
     nav_accommodation: "Accommodation",
     nav_faq: "FAQ",
+    nav_registry: "Wedding Registry",
     nav_rsvp: "RSVP",
     nav_logout: "Logout",
     
@@ -114,6 +115,11 @@ const pageTranslations = {
     faq_a12: "We're here to help! Please don't hesitate to reach out: 📧 Email: info@ourwedding.com 📱 Phone: +30 210 9999 000 We'll get back to you as soon as possible!",
     
     // RSVP Page
+    registry_heading: "Wedding Registry",
+    registry_thank_you: "Your presence is truly our greatest gift. However, for those who have asked, we have put together a small registry. You are absolutely not obligated to participate — your being there is more than enough.",
+    registry_code_label: "Access code",
+    registry_visit_btn: "Visit the Registry",
+
     rsvp_heading: "RSVP",
     rsvp_intro: "Please confirm your attendance and let us know your dietary preferences.",
     rsvp_name_label: "Your Name",
@@ -153,6 +159,7 @@ const pageTranslations = {
     nav_venue: "Lieu",
     nav_accommodation: "Hébergement",
     nav_faq: "FAQ",
+    nav_registry: "Liste de Mariage",
     nav_rsvp: "RSVP",
     nav_logout: "Déconnexion",
     
@@ -250,6 +257,11 @@ const pageTranslations = {
     faq_a12: "Nous sommes là pour vous aider! N'hésitez pas à nous contacter: 📧 Email: info@ourwedding.com 📱 Téléphone: +30 210 9999 000 Nous vous répondrons dès que possible!",
     
     // RSVP Page
+    registry_heading: "Liste de Mariage",
+    registry_thank_you: "Votre présence est notre plus beau cadeau. Cependant, pour ceux qui nous ont posé la question, nous avons constitué une petite liste. Vous n'êtes absolument pas obligés d'y participer — être là avec nous est déjà tout ce qu'il nous faut.",
+    registry_code_label: "Code d'accès",
+    registry_visit_btn: "Voir la liste",
+
     rsvp_heading: "RSVP",
     rsvp_intro: "Veuillez confirmer votre présence et nous faire savoir vos préférences alimentaires.",
     rsvp_name_label: "Votre Nom",
@@ -289,6 +301,7 @@ const pageTranslations = {
     nav_venue: "Χώρος",
     nav_accommodation: "Κατάλυμα",
     nav_faq: "FAQ",
+    nav_registry: "Λίστα Γάμου",
     nav_rsvp: "RSVP",
     nav_logout: "Αποσύνδεση",
     
@@ -386,6 +399,11 @@ const pageTranslations = {
     faq_a12: "Είμαστε εδώ για να βοηθήσουμε! Μη διστάσετε να επικοινωνήσετε: 📧 Email: info@ourwedding.com 📱 Τηλ: +30 210 9999 000 Θα σας απαντήσουμε το συντομότερο δυνατόν!",
     
     // RSVP Page
+    registry_heading: "Λίστα Γάμου",
+    registry_thank_you: "Η παρουσία σας είναι το πιο πολύτιμο δώρο μας. Ωστόσο, για όσους μας ρώτησαν, έχουμε φτιάξει μια μικρή λίστα. Δεν είστε καθόλου υποχρεωμένοι να συμμετάσχετε — το να είστε εκεί μαζί μας είναι ό,τι χρειαζόμαστε.",
+    registry_code_label: "Κωδικός πρόσβασης",
+    registry_visit_btn: "Δείτε τη λίστα",
+
     rsvp_heading: "RSVP",
     rsvp_intro: "Παρακαλώ επιβεβαιώστε την παρουσία σας και ενημερώστε μας για τις διατροφικές σας προτιμήσεις.",
     rsvp_name_label: "Το Όνομά σας",

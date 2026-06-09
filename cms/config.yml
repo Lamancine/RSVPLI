@@ -182,6 +182,17 @@ collections:
             label: "Χώρος — Ώρα κοκτέιλ (Ελληνικά)"
             widget: "string"
 
+          # PAGE LISTE DE MARIAGE
+          - name: "registry_thank_you_fr"
+            label: "Liste de Mariage — Message de remerciement (Français)"
+            widget: "text"
+          - name: "registry_thank_you_en"
+            label: "Wedding Registry — Thank-you message (English)"
+            widget: "text"
+          - name: "registry_thank_you_el"
+            label: "Λίστα Γάμου — Μήνυμα ευχαριστίας (Ελληνικά)"
+            widget: "text"
+
           # PIED DE PAGE
           - name: "footer_text_fr"
             label: "Pied de page (Français)"
