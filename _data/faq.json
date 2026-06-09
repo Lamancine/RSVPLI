@@ -17,6 +17,14 @@
       "answer_el": "Παρακαλώ RSVP πριν από 30 Ιουνίου 2026.\nΕάν έχετε ερωτήσεις ή χρειάζεστε ειδικές ρυθμίσεις, παρακαλώ επικοινωνήστε νωρίς."
     },
     {
+      "question_fr": "Y aura-t-il un transport depuis les hôtels ?",
+      "answer_fr": "Les détails concernant les navettes seront fournis à l'approche de la date.\nSinon, les taxis et VTC sont facilement disponibles à Thessalonique/Peraia.",
+      "question_en": "Will there be transportation from hotels?",
+      "answer_en": "Details about shuttles will be provided closer to the date.\nAlternatively, taxis and ride-sharing apps are readily available in Thessaloniki/Peraia.",
+      "question_el": "Θα υπάρχει μεταφορά από τα ξενοδοχεία;",
+      "answer_el": "Λεπτομέρειες για τη μεταφορά θα παρέχονται πιο κοντά στην ημερομηνία.\nΕναλλακτικά, τα ταξί είναι εύκολα διαθέσιμα στη Θεσσαλονίκη."
+    },
+    {
       "question_fr": "Quel est le code vestimentaire ?",
       "answer_fr": "Nous vous invitons à porter une tenue de soirée : costume pour les hommes (black tie facultatif) et robe cocktail ou de gala pour les femmes.\nVeuillez s'il vous plait éviter le blanc, crème, ivoire et toutes les teintes associées (sauf pour les chemises messieurs)\nAttention : l'extérieur est principalement de l'herbe, donc attention aux talons aiguilles !\nSi le temps le permet, seul le dîner aura lieu à l'intérieur.",
       "question_en": "What is the dress code?",
@@ -25,20 +33,12 @@
       "answer_el": "Ζητείται επίσημη ενδυμασία: κοστούμια, κοκτέιλ φορέματα ή black tie.\nΕνθαρρύνουμε τους καλεσμένους να φορούν χρώματα που τους κάνουν να νιώθουν όμορφοι.\nΗ τελετή γίνεται σε εξωτερικό χώρο — κυρίες, προσοχή στα ψηλοτάκουνα!"
     },
     {
-      "question_fr": "Puis-je amener un invité supplémentaire ?",
-      "answer_fr": "Les +1 sont indiqués sur votre formulaire de RSVP. Nous vous remercions de bien vouloir confirmer votre présence uniquement pour les personnes mentionnées.\nSi vous souhaitez inviter quelqu'un ne figurant pas sur l'invitation, merci de nous contacter dès que possible afin que nous puissions tout arranger pour la venue de cette personne.",
-      "question_en": "Can I bring a guest / plus one?",
-      "answer_en": "Plus-ones are indicated on your invitation. Please only RSVP for guests listed.\nIf you have a significant other not listed and would like them to attend, please contact us as soon as possible in order to be able to organize everything for your special someone.",
-      "question_el": "Μπορώ να φέρω κάποιον συνοδό;",
-      "answer_el": "Οι συνοδοί αναφέρονται στην πρόσκλησή σας. Παρακαλώ RSVP μόνο για τους κατονομασμένους καλεσμένους.\nΕάν θέλετε να φέρετε κάποιον που δεν αναφέρεται, επικοινωνήστε μαζί μας το συντομότερο δυνατόν."
-    },
-    {
-      "question_fr": "Enfants",
-      "answer_fr": "La configuration de notre lieu ne se prête malheureusement pas à l'accueil des enfants, et nous avons avons imaginé cette journée comme un événement adultes uniquement. 🥂\nMerci infiniment pour votre compréhension, nous comprenons la logistique que cela implique et nous vous sommes très reconnaissant. 🫶🏼",
-      "question_en": "Children policy",
-      "answer_en": "Our venue isn't set up to welcome kids, and we have planned our special day as an adult-only event.🥂\nWe are extremely grateful for your understanding and we understand the logistics it implies. 🫶🏼",
-      "question_el": "Πολιτική παιδιών",
-      "answer_el": "Ο γάμος μας είναι μόνο για ενηλίκους.\nΕκτιμούμε την κατανόησή σας."
+      "question_fr": "Où dois-je séjourner ?",
+      "answer_fr": "Visitez la page Hébergement pour trouver une sélection d'hébergements que nous recommandons.\nNote : nous n'avons pas d'affiliations particulières avec les logements listés.",
+      "question_en": "Where should I stay?",
+      "answer_en": "Please refer to the Accommodation page for a selection of places we recommend.\nNote: we have no affiliations with any of the listed accommodations.",
+      "question_el": "Πού να μείνω;",
+      "answer_el": "Επισκεφθείτε τη σελίδα Κατάλυμα για μια επιλογή από μέρη που προτείνουμε.\nΣημείωση: δεν έχουμε καμία συνεργασία με τα καταλύματα που αναφέρονται."
     },
     {
       "question_fr": "Restrictions alimentaires ?",
@@ -57,14 +57,6 @@
       "answer_el": "Η τελετή θα διεξαχθεί στα Γαλλικά και Ελληνικά.\nΘα παρέχουμε φυλλάδιο με μεταφράσεις στα Γαλλικά, Ελληνικά και Αγγλικά.\nΟ ιστότοπος είναι διαθέσιμος και στις τρεις γλώσσες."
     },
     {
-      "question_fr": "Où dois-je séjourner ?",
-      "answer_fr": "Visitez la page Hébergement pour trouver une sélection d'hébergements que nous recommandons.\nNote : nous n'avons pas d'affiliations particulières avec les logements listés.",
-      "question_en": "Where should I stay?",
-      "answer_en": "Please refer to the Accommodation page for a selection of places we recommend.\nNote: we have no affiliations with any of the listed accommodations.",
-      "question_el": "Πού να μείνω;",
-      "answer_el": "Επισκεφθείτε τη σελίδα Κατάλυμα για μια επιλογή από μέρη που προτείνουμε.\nΣημείωση: δεν έχουμε καμία συνεργασία με τα καταλύματα που αναφέρονται."
-    },
-    {
       "question_fr": "Y a-t-il un registre de cadeaux ?",
       "answer_fr": "Votre présence est le plus beau cadeau !\nCependant, si vous souhaitez offrir quelque chose, nous avons créé un petit registre où vous pouvez mettre ce que vous souhaitez ! ",
       "question_en": "Is there a gift registry?",
@@ -73,12 +65,20 @@
       "answer_el": "Η παρουσία σας είναι το μεγαλύτερο δώρο!\nΩστόσο, αν θέλετε να κάνετε δώρο, έχουμε δημιουργήσει ένα ταμείο για τον μήνα του μέλιτος (σύνδεσμος σύντομα)."
     },
     {
-      "question_fr": "Y aura-t-il un transport depuis les hôtels ?",
-      "answer_fr": "Les détails concernant les navettes seront fournis à l'approche de la date.\nSinon, les taxis et VTC sont facilement disponibles à Thessalonique/Peraia.",
-      "question_en": "Will there be transportation from hotels?",
-      "answer_en": "Details about shuttles will be provided closer to the date.\nAlternatively, taxis and ride-sharing apps are readily available in Thessaloniki/Peraia.",
-      "question_el": "Θα υπάρχει μεταφορά από τα ξενοδοχεία;",
-      "answer_el": "Λεπτομέρειες για τη μεταφορά θα παρέχονται πιο κοντά στην ημερομηνία.\nΕναλλακτικά, τα ταξί είναι εύκολα διαθέσιμα στη Θεσσαλονίκη."
+      "question_fr": "Puis-je amener un invité supplémentaire ?",
+      "answer_fr": "Les +1 sont indiqués sur votre formulaire de RSVP. Nous vous remercions de bien vouloir confirmer votre présence uniquement pour les personnes mentionnées.\nSi vous souhaitez inviter quelqu'un ne figurant pas sur l'invitation, merci de nous contacter dès que possible afin que nous puissions tout arranger pour la venue de cette personne.",
+      "question_en": "Can I bring a guest / plus one?",
+      "answer_en": "Plus-ones are indicated on your invitation. Please only RSVP for guests listed.\nIf you have a significant other not listed and would like them to attend, please contact us as soon as possible in order to be able to organize everything for your special someone.",
+      "question_el": "Μπορώ να φέρω κάποιον συνοδό;",
+      "answer_el": "Οι συνοδοί αναφέρονται στην πρόσκλησή σας. Παρακαλώ RSVP μόνο για τους κατονομασμένους καλεσμένους.\nΕάν θέλετε να φέρετε κάποιον που δεν αναφέρεται, επικοινωνήστε μαζί μας το συντομότερο δυνατόν."
+    },
+    {
+      "question_fr": "Enfants",
+      "answer_fr": "La configuration de notre lieu ne se prête malheureusement pas à l'accueil des enfants, et nous avons avons imaginé cette journée comme un événement adultes uniquement. 🥂\nMerci infiniment pour votre compréhension, nous comprenons la logistique que cela implique et nous vous sommes très reconnaissant. 🫶🏼",
+      "question_en": "Children policy",
+      "answer_en": "Our venue isn't set up to welcome kids, and we have planned our special day as an adult-only event.🥂\nWe are extremely grateful for your understanding and we understand the logistics it implies. 🫶🏼",
+      "question_el": "Πολιτική παιδιών",
+      "answer_el": "Ο γάμος μας είναι μόνο για ενηλίκους.\nΕκτιμούμε την κατανόησή σας."
     },
     {
       "question_fr": "Puis-je prendre des photos / vidéos ?",
