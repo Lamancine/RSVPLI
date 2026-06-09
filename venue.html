@@ -223,6 +223,7 @@
   </footer>
 
   <script src="i18n.js"></script>
+  <script src="content-loader.js"></script>
   <script src="navigation.js"></script>
   <script>
     // Countdown Timer - Dynamic calculation
@@ -241,34 +242,14 @@
       }
       
       const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-      
-      // Get the days_to_go text from loaded translations
-      let daysText = 'days';
-      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
-        daysText = pageTranslations[currentLanguage]['days_to_go'];
-      }
-      
-      countdownEl.textContent = 'The final countdown : ' + days + ' ' + daysText;
+      countdownEl.textContent = days + ' ' + (pageTranslations[currentLanguage]['days_to_go'] || pageTranslations['en']['days_to_go']);
     }
 
-    // Start countdown when translations are ready
-    function startCountdown() {
-      calculateAndUpdateCountdown();
-      // Update every minute
-      setInterval(calculateAndUpdateCountdown, 60000);
-    }
-
-    // Listen for translations to load
-    if (translationsReady) {
-      // Already loaded
-      startCountdown();
-    } else {
-      // Wait for translations
-      document.addEventListener('translationsLoaded', startCountdown);
-    }
+    // Initial calculation
+    calculateAndUpdateCountdown();
     
-    // Listen for language changes
-    document.addEventListener('languageChanged', calculateAndUpdateCountdown);
+    // Update every minute to stay fresh
+    setInterval(calculateAndUpdateCountdown, 60000);
 
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburgerMenu');
