@@ -4,6 +4,13 @@
  */
 
 (function() {
+  // If there's a Netlify Identity token in the URL, redirect to CMS immediately
+  var h = window.location.hash;
+  if (h && (h.indexOf('invite_token') !== -1 || h.indexOf('confirmation_token') !== -1 || h.indexOf('recovery_token') !== -1)) {
+    window.location.replace('/cms/' + h);
+    return;
+  }
+
   // Check if guest is verified
   function isGuestVerified() {
     const stored = localStorage.getItem("_wedding_guest");
