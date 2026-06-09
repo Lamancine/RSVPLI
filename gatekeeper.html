@@ -4,16 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Our Wedding</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function(user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/cms/";
-          });
-        }
-      });
+    var h = window.location.hash;
+    if (h && (h.indexOf('invite_token') !== -1 || h.indexOf('confirmation_token') !== -1 || h.indexOf('recovery_token') !== -1)) {
+      window.location.replace('/cms/' + h);
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
