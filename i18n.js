@@ -471,7 +471,13 @@ function translatePage() {
   document.querySelectorAll('[data-i18n]').forEach(elem => {
     const key = elem.getAttribute('data-i18n');
     if (dict[key]) {
-      elem.textContent = dict[key];
+      const val = dict[key];
+      if (val.includes('\n')) {
+        const safe = val.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        elem.innerHTML = safe.replace(/\n/g, '<br>');
+      } else {
+        elem.textContent = val;
+      }
     }
   });
   
