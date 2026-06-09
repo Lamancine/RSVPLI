@@ -1,5 +1,47 @@
 const SPREADSHEET_ID = '13T7-cnVE6zIwxA_CvRZfSbrjmHDYw09UYG1ay6UF4Yg';
 const VALID_TOKEN = 'vf3a9c6d2b8e14f7a9c3d5e6f1a2b4c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4';
+const CONTENT_SHEET_NAME = 'CONTENT';
+
+function savePublishedContent(content) {
+  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  let sheet = ss.getSheetByName(CONTENT_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(CONTENT_SHEET_NAME);
+  }
+
+  const jsonString = JSON.stringify(content);
+  sheet.getRange(1, 1).setValue(jsonString);
+  sheet.getRange(1, 2).setValue(new Date());
+}
+
+function loadPublishedContent() {
+  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const sheet = ss.getSheetByName(CONTENT_SHEET_NAME);
+  if (!sheet) {
+    return null;
+  }
+
+  const raw = sheet.getRange(1, 1).getValue();
+  if (!raw) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(raw);
+  } catch (error) {
+    console.error('Unable to parse published content JSON:', error);
+    return null;
+  }
+}
+
+function doGet(e) {
+  const publishedContent = loadPublishedContent();
+  if (!publishedContent) {
+    return jsonResponse({ status: 'error', message: 'No published content available' }, 404);
+  }
+
+  return jsonResponse({ status: 'success', content: publishedContent });
+}
 
 function doPost(e) {
   try {
@@ -16,6 +58,15 @@ function doPost(e) {
 
     if (payload.token !== VALID_TOKEN) {
       return jsonResponse({ status: 'error', message: 'Invalid API token' }, 401);
+    }
+
+    if (payload.type === 'content') {
+      if (!payload.content) {
+        return jsonResponse({ status: 'error', message: 'Content payload missing' }, 400);
+      }
+
+      savePublishedContent(payload.content);
+      return jsonResponse({ status: 'success', message: 'Content published' });
     }
 
     const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
@@ -122,6 +173,10 @@ function doPost(e) {
 
 function jsonResponse(payload, statusCode) {
   return ContentService.createTextOutput(JSON.stringify(payload))
-    .setMimeType(ContentService.MimeType.JSON)
-    .setContent(JSON.stringify(payload));
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function doOptions(e) {
+  return ContentService.createTextOutput('')
+    .setMimeType(ContentService.MimeType.JSON);
 }

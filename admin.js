@@ -5,6 +5,8 @@
 // Configuration
 const ADMIN_PASSWORD = 'wedding2026'; // Change this to your desired password
 const ADMIN_SESSION_KEY = '_wedding_admin_session';
+const CONTENT_API_URL = 'https://script.google.com/macros/s/AKfycbwlsM30cORGwtFht9vccDpKctuRFgHIGPTgMH6ts50MsETvcmCQalAJoQExhcj6yxkW/exec';
+const CONTENT_API_TOKEN = 'vf3a9c6d2b8e14f7a9c3d5e6f1a2b4c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4';
 
 // Content structure for organizing fields by section
 const CONTENT_SECTIONS = {
@@ -13,7 +15,7 @@ const CONTENT_SECTIONS = {
     'nav_home', 'nav_venue', 'nav_accommodation', 'nav_faq', 'nav_rsvp', 'nav_logout'
   ],
   'Home Page': [
-    'hero_title', 'hero_subtitle', 'hero_date', 'hero_cta',
+    'hero_title', 'hero_subtitle', 'hero_date', 'hero_cta', 'countdown_label', 'story_heading',
     'welcome_heading', 'welcome_text_1', 'welcome_text_2', 'child_free_notice',
     'quick_links_venue', 'quick_links_venue_desc', 'quick_links_venue_btn',
     'quick_links_accommodation', 'quick_links_accommodation_desc', 'quick_links_accommodation_btn',
@@ -47,7 +49,10 @@ const CONTENT_SECTIONS = {
     'rsvp_message_label', 'rsvp_message_placeholder', 'rsvp_review_btn', 'rsvp_language_label',
     'rsvp_thank_you_title', 'rsvp_thank_you_msg', 'rsvp_error'
   ],
-  'Footer': ['footer_text']
+  'Footer': ['footer_text'],
+  'Gatekeeper Page': [
+    'welcome', 'enter_name_prompt', 'verify_and_enter', 'verifying', 'guest_list_note'
+  ]
 };
 
 // Global state
@@ -106,9 +111,107 @@ function adminLogout() {
   document.getElementById('loginError').classList.remove('active');
 }
 
-// Load content from content.json
+// Fetch the published content from the remote API, if configured
+async function fetchPublishedContent() {
+  if (!CONTENT_API_URL || CONTENT_API_URL.includes('YOUR_DEPLOYMENT_ID')) {
+    return null;
+  }
+
+  try {
+    const response = await fetch(CONTENT_API_URL);
+    if (!response.ok) {
+      throw new Error(`Remote fetch failed: ${response.status}`);
+    }
+
+    const result = await response.json();
+    if (result && result.status === 'success' && result.content) {
+      return result.content;
+    }
+
+    return null;
+  } catch (error) {
+    console.warn('Could not load published content:', error);
+    return null;
+  }
+}
+
+async function loadPublishedContent() {
+  const publishedContent = await fetchPublishedContent();
+  if (!publishedContent) {
+    showNotification('Published content unavailable. Using local content.', 'error');
+    return false;
+  }
+
+  contentData = publishedContent;
+  renderForms();
+  showNotification('Published content loaded successfully.', 'success');
+  return true;
+}
+
+async function publishContent() {
+  saveContent();
+
+  if (!CONTENT_API_URL || CONTENT_API_URL.includes('YOUR_DEPLOYMENT_ID')) {
+    showNotification('Publish URL is not configured in admin.js.', 'error');
+    return;
+  }
+
+  if (!CONTENT_API_TOKEN || CONTENT_API_TOKEN === 'REPLACE_WITH_TOKEN') {
+    showNotification('Publish token is not configured in admin.js.', 'error');
+    return;
+  }
+
+  try {
+    const response = await fetch(CONTENT_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        type: 'content',
+        token: CONTENT_API_TOKEN,
+        content: contentData
+      })
+    });
+
+    const result = await response.json();
+    if (!response.ok || result.status !== 'success') {
+      throw new Error(result.message || 'Unknown publish error');
+    }
+
+    showNotification('Content published live successfully!', 'success');
+  } catch (error) {
+    console.error('Publish failed:', error);
+    showNotification(`Publish failed: ${error.message}`, 'error');
+  }
+}
+
+// Load content from content.json or browser storage
 async function loadContent() {
   try {
+    const savedContent = localStorage.getItem('_wedding_content');
+    if (savedContent) {
+      try {
+        const parsedContent = JSON.parse(savedContent);
+        if (parsedContent && typeof parsedContent === 'object') {
+          contentData = parsedContent;
+          renderForms();
+          showNotification('Loaded saved draft from browser storage.', 'success');
+          return;
+        }
+      } catch (parseError) {
+        console.warn('Invalid saved content in localStorage:', parseError);
+      }
+    }
+
+    const publishedContent = await fetchPublishedContent();
+    if (publishedContent) {
+      contentData = publishedContent;
+      renderForms();
+      showNotification('Loaded published content from live site.', 'success');
+      return;
+    }
+
     const response = await fetch('content.json');
     contentData = await response.json();
     renderForms();
@@ -126,14 +229,9 @@ function renderForms() {
     const formContainer = document.getElementById(`contentForm-${lang}`);
     formContainer.innerHTML = '';
     
-    let currentSection = '';
-    
     // Get all keys for this language, ordered by sections
     for (const [sectionName, keys] of Object.entries(CONTENT_SECTIONS)) {
-      if (!currentSection) {
-        currentSection = sectionName;
-        formContainer.innerHTML += `<div class="section-title">${sectionName}</div>`;
-      }
+      formContainer.innerHTML += `<div class="section-title">${sectionName}</div>`;
       
       // Render fields for this section
       keys.forEach(key => {
@@ -157,6 +255,56 @@ function renderForms() {
       });
     }
   });
+
+  document.querySelectorAll('input[data-key], textarea[data-key]').forEach(field => {
+    field.addEventListener('input', handleContentInput);
+  });
+
+  renderPreview();
+}
+
+function handleContentInput(event) {
+  const field = event.target;
+  const key = field.getAttribute('data-key');
+  const lang = field.getAttribute('data-lang');
+  
+  if (!key || !lang) return;
+  if (!contentData[lang]) contentData[lang] = {};
+  contentData[lang][key] = field.value.replace(/\n/g, '<br>');
+  
+  if (lang === currentLanguage) {
+    renderPreview();
+  }
+}
+
+function renderPreview() {
+  const preview = document.getElementById('contentPreview');
+  if (!preview) return;
+  const currentContent = contentData[currentLanguage] || {};
+
+  const formatPreviewText = (text = '') => escapeHtml(text).replace(/&lt;br&gt;/g, '<br>');
+
+  preview.innerHTML = `
+    <div class="preview-hero">
+      <h2>${formatPreviewText(currentContent.hero_title || 'Hero Title')}</h2>
+      <p>${formatPreviewText(currentContent.hero_subtitle || '')}</p>
+      <p class="preview-date">${formatPreviewText(currentContent.hero_date || '')}</p>
+      <div class="preview-cta">${formatPreviewText(currentContent.hero_cta || '')}</div>
+    </div>
+    <div class="preview-section">
+      <h3>${formatPreviewText(currentContent.story_heading || 'Our Story')}</h3>
+      <p>${formatPreviewText(currentContent.welcome_text_1 || '')}</p>
+      <p>${formatPreviewText(currentContent.welcome_text_2 || '')}</p>
+    </div>
+    <div class="preview-section">
+      <h3>${formatPreviewText(currentContent.quick_links_venue || 'Venue')}</h3>
+      <p>${formatPreviewText(currentContent.quick_links_venue_desc || '')}</p>
+      <p><strong>${formatPreviewText(currentContent.quick_links_accommodation || 'Stay Nearby')}</strong></p>
+      <p>${formatPreviewText(currentContent.quick_links_accommodation_desc || '')}</p>
+      <p><strong>${formatPreviewText(currentContent.quick_links_faq || 'Questions?')}</strong></p>
+      <p>${formatPreviewText(currentContent.quick_links_faq_desc || '')}</p>
+    </div>
+  `;
 }
 
 // Switch language tab
@@ -174,6 +322,8 @@ function switchLanguage(lang) {
     section.classList.remove('active');
   });
   document.querySelector(`.form-section[data-lang="${lang}"]`).classList.add('active');
+  
+  renderPreview();
 }
 
 // Save content
@@ -188,10 +338,11 @@ function saveContent() {
     contentData[lang][key] = field.value.replace(/\n/g, '<br>');
   });
   
-  // Save to localStorage
+  // Save to localStorage so the draft persists in this browser
   localStorage.setItem('_wedding_content', JSON.stringify(contentData));
   
-  showNotification('Content saved successfully!', 'success');
+  renderPreview();
+  showNotification('Content saved locally. Use Publish to update the live site.', 'success');
 }
 
 // Export content to JSON file

@@ -206,6 +206,82 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .preview-panel {
+      background: #fbfbfb;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+    }
+
+    .preview-header {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .preview-frame {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .preview-hero {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+    }
+
+    .preview-hero h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .preview-hero p,
+    .preview-section p {
+      margin-bottom: 12px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .preview-date {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .preview-cta {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 3px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    .preview-section h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .editor-note {
+      margin-bottom: 20px;
+      color: var(--text-light);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
     .form-section {
       display: none;
       margin-bottom: 40px;
@@ -385,6 +461,8 @@
     <div class="admin-header">
       <h1>Website Content Editor</h1>
       <div class="admin-actions">
+        <button class="btn btn-primary" onclick="publishContent()">Publish</button>
+        <button class="btn" onclick="loadPublishedContent()">Load Published</button>
         <button class="btn" onclick="exportContent()">Export JSON</button>
         <label class="btn" style="margin: 0; cursor: pointer;">
           Import JSON
@@ -397,25 +475,35 @@
     <div class="notification" id="notification"></div>
 
     <div class="content-editor">
-      <div class="language-tabs">
-        <button class="lang-tab active" data-lang="en" onclick="switchLanguage('en')">English</button>
-        <button class="lang-tab" data-lang="fr" onclick="switchLanguage('fr')">Français</button>
-        <button class="lang-tab" data-lang="el" onclick="switchLanguage('el')">Ελληνικά</button>
-      </div>
+      <div class="editor-layout">
+        <div>
+          <div class="editor-note">Les modifications sont enregistrées localement. Utilisez Publish pour envoyer les changements au site en direct, ou Import/Export pour gérer le JSON manuellement.</div>
+          <div class="language-tabs">
+            <button class="lang-tab active" data-lang="en" onclick="switchLanguage('en')">English</button>
+            <button class="lang-tab" data-lang="fr" onclick="switchLanguage('fr')">Français</button>
+            <button class="lang-tab" data-lang="el" onclick="switchLanguage('el')">Ελληνικά</button>
+          </div>
 
-      <!-- English Content -->
-      <div class="form-section active" data-lang="en">
-        <div id="contentForm-en"></div>
-      </div>
+          <!-- English Content -->
+          <div class="form-section active" data-lang="en">
+            <div id="contentForm-en"></div>
+          </div>
 
-      <!-- French Content -->
-      <div class="form-section" data-lang="fr">
-        <div id="contentForm-fr"></div>
-      </div>
+          <!-- French Content -->
+          <div class="form-section" data-lang="fr">
+            <div id="contentForm-fr"></div>
+          </div>
 
-      <!-- Greek Content -->
-      <div class="form-section" data-lang="el">
-        <div id="contentForm-el"></div>
+          <!-- Greek Content -->
+          <div class="form-section" data-lang="el">
+            <div id="contentForm-el"></div>
+          </div>
+        </div>
+
+        <div class="preview-panel">
+          <div class="preview-header">Aperçu en direct</div>
+          <div id="contentPreview" class="preview-frame"></div>
+        </div>
       </div>
 
       <div class="save-button">

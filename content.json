@@ -15,6 +15,8 @@
     "hero_subtitle": "Join the fellowship of the rings",
     "hero_date": "September 4th, 2026",
     "hero_cta": "RSVP Now",
+    "countdown_label": "Please join us for our wedding celebration on",
+    "story_heading": "Our Story",
     "welcome_heading": "Welcome to Our Wedding",
     "welcome_text_1": "We are thrilled to invite you to celebrate our love. <br>This website contains all the details you need to make the most of our special day.",
     "welcome_text_2": "Explore the venue information, accommodation options, and frequently asked questions. <br>Don't forget to RSVP so we can plan for your arrival!",
@@ -115,6 +117,11 @@
     "rsvp_thank_you_title": "Thank You!",
     "rsvp_thank_you_msg": "Your RSVP has been received. The fellowship is delighted to welcome you in this quest.",
     "rsvp_error": "Failed to submit RSVP. Please try again.",
+    "welcome": "Welcome",
+    "enter_name_prompt": "Please enter your name to access the wedding details.",
+    "verify_and_enter": "Verify & Enter",
+    "verifying": "Verifying...",
+    "guest_list_note": "Make sure you are on our guest list.",
     "footer_text": "© 2026 Gandalf's Wedding inc. New Zealand honeymoon funds. All rights reserved."
   },
   "fr": {
@@ -133,6 +140,8 @@
     "hero_subtitle": "Rejoignez-nous pour célébrer notre mariage",
     "hero_date": "4 Septembre 2026",
     "hero_cta": "RSVP",
+    "countdown_label": "Rejoignez-nous pour célébrer notre mariage le",
+    "story_heading": "Notre histoire",
     "welcome_heading": "Bienvenue",
     "welcome_text_1": "Nous sommes ravis de vous inviter à célébrer notre mariage.<br>Ce site Web contient tous les détails dont vous avez besoin pour vous organiser et profiter au mieux.",
     "welcome_text_2": "Explorez les informations sur le lieu, les options d'hébergement et les questions fréquemment posées. <br>N'oubliez pas de RSVP pour que nous puissions planifier votre arrivée!",
@@ -233,6 +242,11 @@
     "rsvp_thank_you_title": "Merci!",
     "rsvp_thank_you_msg": "Votre RSVP a été reçu. Nous avons hâte de célébrer avec vous!",
     "rsvp_error": "Impossible de soumettre le RSVP. Veuillez réessayer.",
+    "welcome": "Bienvenue",
+    "enter_name_prompt": "Veuillez entrer votre nom pour accéder aux détails du mariage.",
+    "verify_and_enter": "Vérifier et entrer",
+    "verifying": "Vérification...",
+    "guest_list_note": "Assurez-vous que vous êtes sur notre liste d'invités.",
     "footer_text": "© 2026 Gandalf's Wedding inc. New Zealand honeymoon funds. All rights reserved."
   },
   "el": {
@@ -251,6 +265,8 @@
     "hero_subtitle": "Συμμετέχετε στην γιορτή του γάμου μας",
     "hero_date": "14 Φεβρουαρίου 2026",
     "hero_cta": "RSVP Τώρα",
+    "countdown_label": "Παρακαλούμε ελάτε να γιορτάσουμε τον γάμο μας στις",
+    "story_heading": "Η ιστορία μας",
     "welcome_heading": "Καλώς ήρθατε στο Γάμο μας",
     "welcome_text_1": "Είμαστε ενθουσιασμένοι που σας καλούμε να γιορτάσετε την αγάπη και την δέσμευσή μας. Αυτός ο ιστότοπος περιέχει όλες τις πληροφορίες που χρειάζεστε για να κάνετε το καλύτερο από την ειδική ημέρα μας.",
     "welcome_text_2": "Εξερευνήστε τις πληροφορίες χώρου, τις επιλογές κατάλυματος και τις συχνές ερωτήσεις. Μην ξεχάσετε να RSVP ώστε να μπορέσουμε να σχεδιάσουμε την άφιξή σας!",
@@ -351,6 +367,11 @@
     "rsvp_thank_you_title": "Ευχαριστούμε!",
     "rsvp_thank_you_msg": "Το RSVP σας έχει λήφθει. Δεν μπορούμε να περιμένουμε να γιορτάσουμε μαζί σας!",
     "rsvp_error": "Αποτυχία υποβολής RSVP. Παρακαλώ δοκιμάστε ξανά.",
-    "footer_text": "© 2026 Gandalf's Wedding inc. New Zealand honeymoon funds. All rights reserved."
+    "footer_text": "© 2026 Gandalf's Wedding inc. New Zealand honeymoon funds. All rights reserved.",
+    "welcome": "Καλώς ήρθατε",
+    "enter_name_prompt": "Παρακαλώ εισάγετε το όνομά σας για να αποκτήσετε πρόσβαση στις πληροφορίες του γάμου.",
+    "verify_and_enter": "Επιβεβαίωση και είσοδος",
+    "verifying": "Επιβεβαιώνεται...",
+    "guest_list_note": "Βεβαιωθείτε ότι είστε στη λίστα καλεσμένων μας."
   }
 }

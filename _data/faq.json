@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "question_fr": "Quand et où est le mariage ?",
+      "answer_fr": "Notre mariage aura lieu le vendredi 4 septembre 2026 à Ktima Xristidi, Thessalonique, Grèce.\nArrivez à 16h45 pour un verre de bienvenue.\nLa cérémonie commence à 17h15, suivi du cocktail à partir de 18h00.",
+      "question_en": "When and where is the wedding?",
+      "answer_en": "Our wedding will be held on Friday, September 4th, 2026 at Ktima Xristidi, Thessaloniki, Greece.\nGuests should arrive at 4:45 PM.\nThe ceremony begins at 5:15 PM, followed by cocktail at 6:00 PM.",
+      "question_el": "Πότε και πού είναι ο γάμος;",
+      "answer_el": "Ο γάμος μας θα πραγματοποιηθεί την Παρασκευή 4 Σεπτεμβρίου 2026 στο Ktima Xristidi, Θεσσαλονίκη, Ελλάδα.\nΟι επισκέπτες θα πρέπει να φτάσουν στις 16:45.\nΗ τελετή ξεκινά στις 17:15, ακολουθούμενη από κοκτέιλ στις 18:00."
+    },
+    {
+      "question_fr": "Quelle est la date limite de RSVP ?",
+      "answer_fr": "Veuillez RSVP avant le 30 juin 2026.\nSi vous avez des questions ou besoin d'aménagements spéciaux, veuillez nous contacter dès que possible.",
+      "question_en": "When is the RSVP deadline?",
+      "answer_en": "Please RSVP by June 30th, 2026.\nIf you have questions or need special accommodations, please reach out early.",
+      "question_el": "Ποια είναι η προθεσμία RSVP;",
+      "answer_el": "Παρακαλώ RSVP πριν από 30 Ιουνίου 2026.\nΕάν έχετε ερωτήσεις ή χρειάζεστε ειδικές ρυθμίσεις, παρακαλώ επικοινωνήστε νωρίς."
+    },
+    {
+      "question_fr": "Quel est le code vestimentaire ?",
+      "answer_fr": "Nous vous invitons à porter une tenue de soirée : costume pour les hommes (black tie facultatif) et robe cocktail ou de gala pour les femmes.\nAttention : l'extérieur est principalement de l'herbe, donc attention aux talons aiguilles !\nSi le temps le permet, seul le dîner aura lieu à l'intérieur.",
+      "question_en": "What is the dress code?",
+      "answer_en": "Formal Attire is requested: suits, cocktail dresses or black tie attire.\nWe encourage guests to wear colors that make them feel beautiful and confident while avoiding white and ivory.\nThe ceremony takes place outdoors, so plan accordingly — ladies, beware of stilettos on the grass!",
+      "question_el": "Ποιος είναι ο κωδικός ντυσίματος;",
+      "answer_el": "Ζητείται επίσημη ενδυμασία: κοστούμια, κοκτέιλ φορέματα ή black tie.\nΕνθαρρύνουμε τους καλεσμένους να φορούν χρώματα που τους κάνουν να νιώθουν όμορφοι.\nΗ τελετή γίνεται σε εξωτερικό χώρο — κυρίες, προσοχή στα ψηλοτάκουνα!"
+    },
+    {
+      "question_fr": "Puis-je amener un invité supplémentaire ?",
+      "answer_fr": "Les +1 sont indiqués sur votre invitation. Nous vous remercions de bien vouloir confirmer votre présence uniquement pour les personnes mentionnées.\nSi vous souhaitez inviter quelqu'un ne figurant pas sur l'invitation, merci de nous contacter dès que possible.",
+      "question_en": "Can I bring a guest / plus one?",
+      "answer_en": "Plus-ones are indicated on your invitation. Please only RSVP for guests listed.\nIf you have a significant other not listed and would like them to attend, please contact us as soon as possible.",
+      "question_el": "Μπορώ να φέρω κάποιον συνοδό;",
+      "answer_el": "Οι συνοδοί αναφέρονται στην πρόσκλησή σας. Παρακαλώ RSVP μόνο για τους κατονομασμένους καλεσμένους.\nΕάν θέλετε να φέρετε κάποιον που δεν αναφέρεται, επικοινωνήστε μαζί μας το συντομότερο δυνατόν."
+    },
+    {
+      "question_fr": "Enfants",
+      "answer_fr": "Notre mariage est réservé aux adultes.\nNous espérons que vous pourrez vous joindre à nous pour profiter pleinement de la soirée.",
+      "question_en": "Children policy",
+      "answer_en": "Our wedding is adults-only.\nWe are unable to accommodate children and appreciate your understanding.",
+      "question_el": "Πολιτική παιδιών",
+      "answer_el": "Ο γάμος μας είναι μόνο για ενηλίκους.\nΕκτιμούμε την κατανόησή σας."
+    },
+    {
+      "question_fr": "Et les restrictions alimentaires ?",
+      "answer_fr": "Nous sommes heureux d'accommoder vos préférences alimentaires ! Lorsque vous RSVP, sélectionnez vos préférences.\nLes options incluent végétarien, vegan, sans gluten et allergies.\nSi vos besoins ne sont pas listés, précisez-les dans le champ message.",
+      "question_en": "What about dietary restrictions?",
+      "answer_en": "We're happy to accommodate dietary needs! When you RSVP, please select your dietary preferences.\nOptions include vegetarian, vegan, gluten-free, and allergy accommodations.\nIf your needs aren't listed, please provide details in the message section.",
+      "question_el": "Τι γίνεται με τις διατροφικές περιορισμούς;",
+      "answer_el": "Είμαστε χαρούμενοι να φιλοξενήσουμε διατροφικές ανάγκες! Κατά το RSVP, επιλέξτε τις διατροφικές σας προτιμήσεις.\nΟι επιλογές περιλαμβάνουν χορτοφάγο, vegan, χωρίς γλουτένη και αλλεργίες."
+    },
+    {
+      "question_fr": "Quelles langues seront parlées ?",
+      "answer_fr": "La cérémonie sera menée en français et en grec.\nNous fournirons sur place un livret avec les traductions en français, grec et anglais de tous les discours.\nNotre site Web est disponible dans les trois langues.",
+      "question_en": "What languages will be spoken?",
+      "answer_en": "The ceremony will be conducted in French and Greek.\nWe will provide a booklet with translations in French, Greek and English of all speeches.\nThe website is available in all three languages.",
+      "question_el": "Ποιες γλώσσες θα μιλούνται;",
+      "answer_el": "Η τελετή θα διεξαχθεί στα Γαλλικά και Ελληνικά.\nΘα παρέχουμε φυλλάδιο με μεταφράσεις στα Γαλλικά, Ελληνικά και Αγγλικά.\nΟ ιστότοπος είναι διαθέσιμος και στις τρεις γλώσσες."
+    },
+    {
+      "question_fr": "Où dois-je séjourner ?",
+      "answer_fr": "Visitez la page Hébergement pour trouver une sélection d'hébergements que nous recommandons.\nNote : nous n'avons pas d'affiliations particulières avec les logements listés.",
+      "question_en": "Where should I stay?",
+      "answer_en": "Please refer to the Accommodation page for a selection of places we recommend.\nNote: we have no affiliations with any of the listed accommodations.",
+      "question_el": "Πού να μείνω;",
+      "answer_el": "Επισκεφθείτε τη σελίδα Κατάλυμα για μια επιλογή από μέρη που προτείνουμε.\nΣημείωση: δεν έχουμε καμία συνεργασία με τα καταλύματα που αναφέρονται."
+    },
+    {
+      "question_fr": "Y a-t-il un registre de cadeaux ?",
+      "answer_fr": "Votre présence est le plus beau cadeau !\nCependant, si vous souhaitez offrir quelque chose, nous avons créé une cagnotte pour participer à notre lune de miel (lien à venir).",
+      "question_en": "Is there a gift registry?",
+      "answer_en": "Your presence is the greatest gift!\nHowever, if you wish to give a gift, we have set up a honeymoon fund (link coming soon).",
+      "question_el": "Υπάρχει λίστα δώρων;",
+      "answer_el": "Η παρουσία σας είναι το μεγαλύτερο δώρο!\nΩστόσο, αν θέλετε να κάνετε δώρο, έχουμε δημιουργήσει ένα ταμείο για τον μήνα του μέλιτος (σύνδεσμος σύντομα)."
+    },
+    {
+      "question_fr": "Y aura-t-il un transport depuis les hôtels ?",
+      "answer_fr": "Les détails concernant les navettes seront fournis à l'approche de la date.\nSinon, les taxis et VTC sont facilement disponibles à Thessalonique.",
+      "question_en": "Will there be transportation from hotels?",
+      "answer_en": "Details about shuttles will be provided closer to the date.\nAlternatively, taxis and ride-sharing apps are readily available in Thessaloniki.",
+      "question_el": "Θα υπάρχει μεταφορά από τα ξενοδοχεία;",
+      "answer_el": "Λεπτομέρειες για τη μεταφορά θα παρέχονται πιο κοντά στην ημερομηνία.\nΕναλλακτικά, τα ταξί είναι εύκολα διαθέσιμα στη Θεσσαλονίκη."
+    },
+    {
+      "question_fr": "Puis-je prendre des photos / vidéos ?",
+      "answer_fr": "Nous avons engagé un photographe professionnel.\nNous vous demandons de ne pas prendre de photos ou vidéos pendant la cérémonie pour que chacun soit pleinement présent.\nEn revanche, n'hésitez pas pendant le cocktail, le dîner et la fête !",
+      "question_en": "Can I take photos / videos?",
+      "answer_en": "We have hired a professional photographer.\nWe kindly ask that you refrain from taking photos or videos during the ceremony so everyone can be fully present.\nFeel free to capture moments during the cocktail, dinner and party!",
+      "question_el": "Μπορώ να τραβήξω φωτογραφίες/βίντεο;",
+      "answer_el": "Έχουμε προσλάβει επαγγελματία φωτογράφο.\nΠαρακαλούμε να μην τραβάτε φωτογραφίες ή βίντεο κατά τη διάρκεια της τελετής.\nΕλεύθερα κατά τη διάρκεια του κοκτέιλ, του δείπνου και του πάρτι!"
+    },
+    {
+      "question_fr": "Si j'ai d'autres questions ?",
+      "answer_fr": "N'hésitez pas à nous contacter :\n📱 Lara : +33 6 72 16 74 00\n📱 Iosif : +33 6 37 27 41 33",
+      "question_en": "What if I have more questions?",
+      "answer_en": "Please don't hesitate to reach out:\n📱 Lara: +33 6 72 16 74 00\n📱 Iosif: +33 6 37 27 41 33",
+      "question_el": "Αν έχω περισσότερες ερωτήσεις;",
+      "answer_el": "Μη διστάσετε να επικοινωνήσετε:\n📱 Lara: +33 6 72 16 74 00\n📱 Iosif: +33 6 37 27 41 33"
+    }
+  ]
+}

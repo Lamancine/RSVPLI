@@ -6,7 +6,7 @@
 (function() {
   // ⚠️ CONFIGURE THESE:
   // Apps Script Web App URL
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxq19zORo7B55KkS8yXe92FTljQIFYRZHr5-iW37L6lZXLGvbEoSBlMYTM7LM5FbcU4/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlsM30cORGwtFht9vccDpKctuRFgHIGPTgMH6ts50MsETvcmCQalAJoQExhcj6yxkW/exec";
   
   // API Token (must match token in Apps Script)
   const API_TOKEN = "vf3a9c6d2b8e14f7a9c3d5e6f1a2b4c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4";

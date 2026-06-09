@@ -12,14 +12,13 @@
 }
 
 :root {
-  --ink: #2f2a28;
-  --text: #3f3935;
-  --text-light: #7e776f;
-  --muted: #8f857b;
-  --primary: #2f2a28;
-  --primary-light: #5a4c42;
-  --border: rgba(97, 83, 70, 0.18);
-  --light-bg: #f9f4ed;
+  --ink: #414042;
+  --text: #414042;
+  --text-light: #666;
+  --primary: #414042;
+  --primary-light: #676668;
+  --border: #e8e8e8;
+  --light-bg: #ffffff;
   --white: #ffffff;
   --gold: #b99148;
   --gold-light: #d0b26f;

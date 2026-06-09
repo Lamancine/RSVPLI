@@ -179,69 +179,12 @@
   <section class="content-section">
     <div class="container">
       <div class="content-card">
-        <h2 data-i18n="accommodation_heading">Where to Stay</h2>
-        <p class="section-intro" data-i18n="accommodation_intro">We have partnered with several hotels to offer our guests special rates. Please mention the wedding when booking to receive your discount.</p>
-
-        <!-- Hotels Grid -->
-        <div class="hotels-grid">
-          <!-- Hotel 1 -->
-          <div class="hotel-card">
-            <h3 data-i18n="hotel_1_name">The Luxe Athens Hotel</h3>
-            <p class="hotel-rating" data-i18n="hotel_1_rating">⭐⭐⭐⭐⭐ 5-star</p>
-            <p class="hotel-distance" data-i18n="hotel_1_distance">2.5 km from venue</p>
-            <ul class="hotel-amenities" data-i18n="hotel_1_amenities">
-              <li>✓ Free WiFi</li>
-              <li>✓ Spa & Wellness</li>
-              <li>✓ Restaurant</li>
-            </ul>
-            <p class="hotel-rate" data-i18n="hotel_1_rate"><strong>Guest Rate:</strong> €180/night</p>
-            <p class="hotel-contact" data-i18n="hotel_1_contact">📞 +30 210 9999 111</p>
-          </div>
-
-          <!-- Hotel 2 -->
-          <div class="hotel-card">
-            <h3 data-i18n="hotel_2_name">The Botanical Inn</h3>
-            <p class="hotel-rating" data-i18n="hotel_2_rating">⭐⭐⭐⭐ 4-star</p>
-            <p class="hotel-distance" data-i18n="hotel_2_distance">1.8 km from venue</p>
-            <ul class="hotel-amenities" data-i18n="hotel_2_amenities">
-              <li>✓ Free breakfast</li>
-              <li>✓ Parking</li>
-              <li>✓ Concierge</li>
-            </ul>
-            <p class="hotel-rate" data-i18n="hotel_2_rate"><strong>Guest Rate:</strong> €120/night</p>
-            <p class="hotel-contact" data-i18n="hotel_2_contact">📞 +30 210 8888 222</p>
-          </div>
-
-          <!-- Hotel 3 -->
-          <div class="hotel-card">
-            <h3 data-i18n="hotel_3_name">Hotel Serenity</h3>
-            <p class="hotel-rating" data-i18n="hotel_3_rating">⭐⭐⭐ 3-star</p>
-            <p class="hotel-distance" data-i18n="hotel_3_distance">3.2 km from venue</p>
-            <ul class="hotel-amenities" data-i18n="hotel_3_amenities">
-              <li>✓ Budget-friendly</li>
-              <li>✓ Transport included</li>
-              <li>✓ Breakfast</li>
-            </ul>
-            <p class="hotel-rate" data-i18n="hotel_3_rate"><strong>Guest Rate:</strong> €75/night</p>
-            <p class="hotel-contact" data-i18n="hotel_3_contact">📞 +30 210 7777 333</p>
-          </div>
+        <p class="section-intro" id="hotelsIntro" data-i18n="accommodation_intro"></p>
+        <div class="hotels-grid" id="hotelsGrid">
+          <p style="color:#999;text-align:center;">Chargement…</p>
         </div>
-
-        <!-- Booking Information -->
-        <div class="booking-info">
-          <h3 data-i18n="booking_info_title">Booking Instructions</h3>
-          <ol>
-            <li data-i18n="booking_step_1">Contact the hotel directly using the phone number provided</li>
-            <li data-i18n="booking_step_2">Mention the wedding in your booking</li>
-            <li data-i18n="booking_step_3">Provide your name and dates of stay</li>
-            <li data-i18n="booking_step_4">Special rates valid until January 31st, 2026</li>
-          </ol>
-        </div>
-
-        <!-- Alternative Accommodations -->
-        <div class="alternative-stays">
-          <h3 data-i18n="alternative_stays_title">Other Options</h3>
-          <p data-i18n="alternative_stays_desc">If the above options don't suit you, Athens has many other hotels and vacation rentals available through online platforms.</p>
+        <div class="alternative-stays" style="margin-top:40px;">
+          <p data-i18n="alternative_stays_desc">Si aucune option ci-dessus ne vous convient, Thessalonique dispose de nombreux hôtels disponibles sur booking.com, kayak, etc.</p>
         </div>
       </div>
     </div>
@@ -255,49 +198,60 @@
   <script src="i18n.js"></script>
   <script src="navigation.js"></script>
   <script>
-    // Countdown Timer - Dynamic calculation
+    let hotelsData = null;
+
+    function renderHotels(lang) {
+      if (!hotelsData) return;
+      const suffix = lang === 'el' ? '_el' : (lang === 'fr' ? '_fr' : '_en');
+      const intro = hotelsData['intro' + suffix] || hotelsData.intro_fr;
+      document.getElementById('hotelsIntro').textContent = intro;
+      document.getElementById('hotelsGrid').innerHTML = hotelsData.items.map(h => {
+        const note = h['note' + suffix] || '';
+        const noteHtml = note ? `<div class="hotel-note" style="background:#f9f5ef;border-left:3px solid #c9a227;padding:10px 14px;margin:12px 0;font-size:14px;line-height:1.5;">${note}</div>` : '';
+        const contactHtml = h.contact ? `<p class="hotel-contact" style="font-size:13px;color:#666;margin-top:8px;">${h.contact}</p>` : '';
+        const bookingBtn = h.booking_url ? `<a href="${h.booking_url}" target="_blank" class="link-btn" style="display:inline-block;margin-top:14px;">Voir sur Booking.com</a>` : '';
+        return `
+          <div class="hotel-card">
+            <h3>${h['name' + suffix] || h.name_fr}</h3>
+            <p class="hotel-rating">${h['rating' + suffix] || h.rating_fr}</p>
+            <p class="hotel-distance">📍 ${h['distance' + suffix] || h.distance_fr}</p>
+            <p class="hotel-amenities" style="margin-top:6px;">✓ ${h['amenities' + suffix] || h.amenities_fr}</p>
+            ${noteHtml}
+            <p class="hotel-rate" style="font-weight:600;margin-top:8px;">${h.rate}</p>
+            ${contactHtml}
+            ${bookingBtn}
+          </div>`;
+      }).join('');
+    }
+
+    fetch('_data/hotels.json')
+      .then(r => r.json())
+      .then(data => {
+        hotelsData = data;
+        renderHotels(typeof currentLanguage !== 'undefined' ? currentLanguage : 'fr');
+      })
+      .catch(() => {
+        document.getElementById('hotelsGrid').innerHTML = '<p style="color:#b9374c;text-align:center;">Impossible de charger les hébergements.</p>';
+      });
+
+    document.addEventListener('languageChanged', () => {
+      if (hotelsData) renderHotels(currentLanguage);
+    });
+
+    // Countdown
     function calculateAndUpdateCountdown() {
       const countdownEl = document.getElementById('countdownMessage');
       if (!countdownEl) return;
-      
       const now = new Date();
-      const weddingDate = new Date(2026, 8, 4); // September 4, 2026
-      
+      const weddingDate = new Date(2026, 8, 4);
       const timeDiff = weddingDate.getTime() - now.getTime();
-      
-      if (timeDiff <= 0) {
-        countdownEl.textContent = 'The Wedding Day!';
-        return;
-      }
-      
+      if (timeDiff <= 0) { countdownEl.textContent = 'The Wedding Day!'; return; }
       const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-      
-      // Get the days_to_go text from loaded translations
-      let daysText = 'days';
-      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
-        daysText = pageTranslations[currentLanguage]['days_to_go'];
-      }
-      
-      countdownEl.textContent = 'The final countdown : ' + days + ' ' + daysText;
+      const daysText = (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage]) ? (pageTranslations[currentLanguage]['days_to_go'] || 'days') : 'days';
+      countdownEl.textContent = days + ' ' + daysText;
     }
-
-    // Start countdown when translations are ready
-    function startCountdown() {
-      calculateAndUpdateCountdown();
-      // Update every minute
-      setInterval(calculateAndUpdateCountdown, 60000);
-    }
-
-    // Listen for translations to load
-    if (translationsReady) {
-      // Already loaded
-      startCountdown();
-    } else {
-      // Wait for translations
-      document.addEventListener('translationsLoaded', startCountdown);
-    }
-    
-    // Listen for language changes
+    calculateAndUpdateCountdown();
+    setInterval(calculateAndUpdateCountdown, 60000);
     document.addEventListener('languageChanged', calculateAndUpdateCountdown);
 
     // Hamburger Menu Toggle

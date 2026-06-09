@@ -1,0 +1,131 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: fr
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+
+  # -------------------------------------------------------
+  # FAQ — ajouter / supprimer / modifier des questions
+  # -------------------------------------------------------
+  - name: "faq"
+    label: "❓ FAQ"
+    files:
+      - name: "questions"
+        label: "Questions & Réponses"
+        file: "_data/faq.json"
+        fields:
+          - name: "items"
+            label: "Questions (tu peux en ajouter, en supprimer et les réordonner)"
+            widget: "list"
+            summary: "{{fields.question_fr}}"
+            fields:
+              - name: "question_fr"
+                label: "Question — Français"
+                widget: "string"
+              - name: "answer_fr"
+                label: "Réponse — Français"
+                widget: "text"
+              - name: "question_en"
+                label: "Question — English"
+                widget: "string"
+              - name: "answer_en"
+                label: "Answer — English"
+                widget: "text"
+              - name: "question_el"
+                label: "Ερώτηση — Ελληνικά"
+                widget: "string"
+              - name: "answer_el"
+                label: "Απάντηση — Ελληνικά"
+                widget: "text"
+
+  # -------------------------------------------------------
+  # HÉBERGEMENTS — ajouter / supprimer / modifier des hôtels
+  # -------------------------------------------------------
+  - name: "hotels"
+    label: "🏨 Hébergements"
+    files:
+      - name: "liste"
+        label: "Liste des hébergements"
+        file: "_data/hotels.json"
+        fields:
+          - name: "intro_fr"
+            label: "Texte d'introduction (Français)"
+            widget: "text"
+          - name: "intro_en"
+            label: "Introduction text (English)"
+            widget: "text"
+          - name: "intro_el"
+            label: "Εισαγωγικό κείμενο (Ελληνικά)"
+            widget: "text"
+          - name: "items"
+            label: "Hôtels (tu peux en ajouter, en supprimer et les réordonner)"
+            widget: "list"
+            summary: "{{fields.name_fr}}"
+            fields:
+              - name: "name_fr"
+                label: "Nom de l'hôtel — Français"
+                widget: "string"
+              - name: "name_en"
+                label: "Hotel name — English"
+                widget: "string"
+              - name: "name_el"
+                label: "Όνομα — Ελληνικά"
+                widget: "string"
+              - name: "rating_fr"
+                label: "Étoiles / catégorie — Français (ex: 4 étoiles)"
+                widget: "string"
+              - name: "rating_en"
+                label: "Stars / category — English"
+                widget: "string"
+              - name: "rating_el"
+                label: "Αξιολόγηση — Ελληνικά"
+                widget: "string"
+              - name: "distance_fr"
+                label: "Distance du lieu — Français (ex: 2 km du lieu)"
+                widget: "string"
+              - name: "distance_en"
+                label: "Distance from venue — English"
+                widget: "string"
+              - name: "distance_el"
+                label: "Απόσταση — Ελληνικά"
+                widget: "string"
+              - name: "amenities_fr"
+                label: "Services inclus — Français (ex: WiFi gratuit, Piscine)"
+                widget: "string"
+              - name: "amenities_en"
+                label: "Amenities — English"
+                widget: "string"
+              - name: "amenities_el"
+                label: "Παροχές — Ελληνικά"
+                widget: "string"
+              - name: "rate"
+                label: "Tarif par nuit (ex: €120 / nuit)"
+                widget: "string"
+              - name: "contact"
+                label: "Téléphone (ex: +30 2310 123456)"
+                widget: "string"
+              - name: "booking_url"
+                label: "Lien de réservation Booking.com (optionnel)"
+                widget: "string"
+                required: false
+                default: ""
+              - name: "note_fr"
+                label: "Note spéciale (Français) — ex: appartements pré-réservés, contacter Lara..."
+                widget: "text"
+                required: false
+                default: ""
+              - name: "note_en"
+                label: "Special note (English)"
+                widget: "text"
+                required: false
+                default: ""
+              - name: "note_el"
+                label: "Ειδική σημείωση (Ελληνικά)"
+                widget: "text"
+                required: false
+                default: ""

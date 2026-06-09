@@ -95,67 +95,9 @@
       }
     }
   </style>
-  <script>
-  // Prepare builder namespace and define init handler before loading SDK
-  window.builder = window.builder || [];
-  function builderInit(){
-    if (window.builder && typeof window.builder.init === 'function'){
-      window.builder.init("bf3aeb9364f74f0f8f90c44c53306e72");
-    }
-  }
-  </script>
-  <script src="https://cdn.builder.io/js/editor" onload="builderInit()"></script>
 </head>
 <body>
   <script src="auth-check.js"></script>
-  <script src="navigation.js"></script>
-  
-  <script>
-    // Countdown Timer - Dynamic calculation
-    function calculateAndUpdateCountdown() {
-      const countdownEl = document.getElementById('countdownMessage');
-      if (!countdownEl) return;
-      
-      const now = new Date();
-      const weddingDate = new Date(2026, 8, 4); // September 4, 2026
-      
-      const timeDiff = weddingDate.getTime() - now.getTime();
-      
-      if (timeDiff <= 0) {
-        countdownEl.textContent = 'The Wedding Day!';
-        return;
-      }
-      
-      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-      
-      // Get the days_to_go text from loaded translations
-      let daysText = 'days';
-      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
-        daysText = pageTranslations[currentLanguage]['days_to_go'];
-      }
-      
-      countdownEl.textContent = 'The final countdown : ' + days + ' ' + daysText;
-    }
-
-    // Start countdown when translations are ready
-    function startCountdown() {
-      calculateAndUpdateCountdown();
-      // Update every minute
-      setInterval(calculateAndUpdateCountdown, 60000);
-    }
-
-    // Listen for translations to load
-    if (typeof translationsReady !== 'undefined' && translationsReady) {
-      // Already loaded
-      startCountdown();
-    } else {
-      // Wait for translations (or start when translationsLoaded event fires)
-      document.addEventListener('translationsLoaded', startCountdown);
-    }
-    
-    // Listen for language changes
-    document.addEventListener('languageChanged', calculateAndUpdateCountdown);
-  </script>
   <div class="mobile-header">
     <span class="mobile-header-logo">L&I</span>
   </div>
@@ -285,6 +227,22 @@
   <script src="i18n.js"></script>
   <script src="navigation.js"></script>
   <script>
+    // Countdown
+    function calculateAndUpdateCountdown() {
+      const countdownEl = document.getElementById('countdownMessage');
+      if (!countdownEl) return;
+      const now = new Date();
+      const weddingDate = new Date(2026, 8, 4);
+      const timeDiff = weddingDate.getTime() - now.getTime();
+      if (timeDiff <= 0) { countdownEl.textContent = 'The Wedding Day!'; return; }
+      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      const daysText = (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage]) ? (pageTranslations[currentLanguage]['days_to_go'] || 'days') : 'days';
+      countdownEl.textContent = days + ' ' + daysText;
+    }
+    calculateAndUpdateCountdown();
+    setInterval(calculateAndUpdateCountdown, 60000);
+    document.addEventListener('languageChanged', calculateAndUpdateCountdown);
+
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburgerMenu');
     const mobileNav = document.getElementById('mobileNav');
