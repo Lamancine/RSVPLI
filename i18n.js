@@ -451,6 +451,7 @@ function setLanguage(lang) {
     localStorage.setItem('_wedding_language', currentLanguage);
     updateLanguageUI();
     translatePage();
+    document.dispatchEvent(new Event('languageChanged'));
   }
 }
 
