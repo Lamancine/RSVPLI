@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP - Our Wedding</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="rsvp.css">
+  <style>
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      height: auto;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      order: 1;
+      padding: 20px 0;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      order: 2;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 20px;
+        gap: 20px;
+      }
+
+      .nav-menu {
+        gap: 15px;
+        flex-basis: 100%;
+        order: 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script src="auth-check.js"></script>
+  
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <span class="mobile-header-logo">L&I</span>
+  </div>
+
+  <!-- Hamburger Menu for Mobile -->
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="venue.html" data-i18n="nav_venue">Venue</a>
+    <a href="accommodation.html" data-i18n="nav_accommodation">Accommodation</a>
+    <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+    <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+    <a href="#" id="logoutBtn" data-i18n="nav_logout">Logout</a>
+  </nav>
+  
+  <!-- Floral Arch Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">LARA & IOSIF</h1>
+    <p class="hero-date" data-i18n="wedding_date">SEPTEMBER 4, 2026</p>
+    <p class="hero-countdown" id="countdownMessage">Loading...</p>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="hero-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="venue.html" data-i18n="nav_venue">Venue</a></li>
+      <li><a href="accommodation.html" data-i18n="nav_accommodation">Accommodation</a></li>
+      <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a></li>
+      <li><a href="#" id="logoutBtn" style="color: #999; border-bottom: none; padding-left: 20px; font-size: 13px;" data-i18n="nav_logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Language Selector -->
+  <div class="language-selector" style="position: fixed; top: 20px; right: 40px; display: flex; gap: 8px; z-index: 100; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(4px); padding: 4px 6px; border-radius: 2px; box-shadow: 0 1px 4px rgba(65, 64, 66, 0.1);">
+    <button class="lang-btn" data-lang="en" data-i18n="lang_en" onclick="setLanguage('en')">EN</button>
+    <button class="lang-btn" data-lang="fr" data-i18n="lang_fr" onclick="setLanguage('fr')">FR</button>
+    <button class="lang-btn" data-lang="el" data-i18n="lang_el" onclick="setLanguage('el')">ΕΛ</button>
+  </div>
+
+  <!-- Navigation (hidden) -->
+  <nav class="navbar" style="display: none;">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Our Wedding</a>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+        <li class="nav-item"><a href="venue.html" class="nav-link" data-i18n="nav_venue">Venue</a></li>
+        <li class="nav-item"><a href="accommodation.html" class="nav-link" data-i18n="nav_accommodation">Accommodation</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+        <li class="nav-item"><a href="rsvp.html" class="nav-link active primary-nav-link" data-i18n="nav_rsvp">RSVP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1 data-i18n="rsvp_heading">RSVP</h1>
+  </section>
+
+  <!-- RSVP Content -->
+  <section class="content-section rsvp-section">
+    <div id="card">
+      <!-- STEP 2: RSVP Form (No gatekeeper needed - already authenticated) -->
+      <div id="step2" class="step active">
+        <h3 id="familyTitle" class="hide-when-no"></h3>
+        <div class="lang hide-when-no">
+          <button type="button" class="langBtn" data-lang="fr" aria-label="Français">🇫🇷</button>
+          <button type="button" class="langBtn" data-lang="en" aria-label="English">🇬🇧</button>
+          <button type="button" class="langBtn" data-lang="gr" aria-label="Ελληνικά">🇬🇷</button>
+        </div>
+        <form id="rsvpForm" onsubmit="return false">
+          <!-- Toujours visibles même quand "No" -->
+          <h4 data-i18n-key="attend_label">Will you attend?</h4>
+          <select id="attending" aria-label="Attendance">
+            <option value="Yes" data-i18n-key="yes">Yes</option>
+            <option value="No" data-i18n-key="no">No</option>
+          </select>
+          <div id="guestsContainer" class="hide-when-no"></div>
+          <textarea id="message" placeholder="Message"></textarea>
+          <!-- Ouvre le résumé avant envoi -->
+          <button id="openReviewBtn" class="link-btn" type="button">
+            <span id="btnText" data-i18n-key="review_rsvp">Review & Send</span>
+            <span id="loader" class="spinner"></span>
+          </button>
+          <p id="sendError" class="sendError" style="display:none;"></p>
+        </form>
+      </div>
+      <!-- STEP 3: Thank you -->
+      <div id="step3" class="step">
+        <div class="checkmark-wrap">
+          <svg class="evil-eye" width="60" height="60" viewBox="0 0 64 64">
+            <circle cx="32" cy="32" r="40" fill="#fff"/>
+            <circle cx="32" cy="32" r="30" fill="#3498db"/> <!-- bleu clair -->
+            <circle cx="32" cy="32" r="20" fill="#fff"/> <!-- blanc -->
+            <circle cx="32" cy="32" r="12" fill="#00ffff"/> <!-- turquoise -->
+            <circle cx="32" cy="32" r="5" fill="#2c3e50"/> <!-- pupille bleu foncé -->
+          </svg>
+        </div>
+        <h2 data-i18n-key="thanks_title">Thank you</h2>
+        <p data-i18n-key="thanks_text">Your response has been received</p>
+        <a href="index.html" class="link-btn">Back to Home</a>
+      </div>
+      <!-- MODAL — Résumé avant envoi -->
+      <div id="reviewModal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="reviewTitle">
+        <div class="modal-card">
+          <div class="modal-header">
+            <h3 id="reviewTitle" data-i18n-key="review_title">Review your RSVP</h3>
+            <button type="button" class="icon-btn" id="closeReviewBtn" aria-label="Close">✕</button>
+          </div>
+          <p class="modal-sub" data-i18n-key="review_sub">Please confirm your details before sending.</p>
+          <div id="reviewContent" class="review-content"></div>
+          <div class="modal-actions">
+            <button id="editBtn" type="button" class="ghost-btn" data-i18n-key="edit">Edit</button>
+            <button id="confirmBtn" type="button" class="primary-btn" data-i18n-key="confirm_send">Confirm & Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><span data-i18n="footer_text">&copy; 2026 Our Wedding. All rights reserved.</span></p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="navigation.js"></script>
+  <script>
+    // Countdown Timer - Dynamic calculation
+    function calculateAndUpdateCountdown() {
+      const countdownEl = document.getElementById('countdownMessage');
+      if (!countdownEl) return;
+      
+      const now = new Date();
+      const weddingDate = new Date(2026, 8, 4); // September 4, 2026
+      
+      const timeDiff = weddingDate.getTime() - now.getTime();
+      
+      if (timeDiff <= 0) {
+        countdownEl.textContent = 'The Wedding Day!';
+        return;
+      }
+      
+      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      
+      // Get the days_to_go text from loaded translations
+      let daysText = 'days';
+      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
+        daysText = pageTranslations[currentLanguage]['days_to_go'];
+      }
+      
+      countdownEl.textContent = 'The final countdown : ' + days + ' ' + daysText;
+    }
+
+    // Start countdown when translations are ready
+    function startCountdown() {
+      calculateAndUpdateCountdown();
+      // Update every minute
+      setInterval(calculateAndUpdateCountdown, 60000);
+    }
+
+    // Listen for translations to load
+    if (translationsReady) {
+      // Already loaded
+      startCountdown();
+    } else {
+      // Wait for translations
+      document.addEventListener('translationsLoaded', startCountdown);
+    }
+    
+    // Listen for language changes
+    document.addEventListener('languageChanged', calculateAndUpdateCountdown);
+
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburgerMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    // Close mobile nav when a link is clicked
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+      });
+    });
+  </script>
+  <script src="rsvp.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venue - Our Wedding</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      height: auto;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      order: 1;
+      padding: 20px 0;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      order: 2;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    .language-selector-navbar {
+      order: 3;
+      display: flex;
+      gap: 8px;
+      padding: 20px 0;
+      white-space: nowrap;
+    }
+
+    .lang-btn-nav {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      outline: none;
+      border-radius: 0;
+      font-family: inherit;
+    }
+
+    .lang-btn-nav:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .lang-btn-nav.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 20px;
+        gap: 20px;
+      }
+
+      .nav-menu {
+        gap: 15px;
+        flex-basis: 100%;
+        order: 3;
+      }
+
+      .language-selector-navbar {
+        order: 4;
+        flex-basis: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script src="auth-check.js"></script>
+  
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <span class="mobile-header-logo">L&I</span>
+  </div>
+
+  <!-- Hamburger Menu for Mobile -->
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="venue.html" data-i18n="nav_venue">Venue</a>
+    <a href="accommodation.html" data-i18n="nav_accommodation">Accommodation</a>
+    <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+    <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+    <a href="#" id="logoutBtn" data-i18n="nav_logout">Logout</a>
+  </nav>
+  
+  <!-- Floral Arch Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">LARA & IOSIF</h1>
+    <p class="hero-date" data-i18n="wedding_date">SEPTEMBER 4, 2026</p>
+    <p class="hero-countdown" id="countdownMessage">Loading...</p>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="hero-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="venue.html" data-i18n="nav_venue">Venue</a></li>
+      <li><a href="accommodation.html" data-i18n="nav_accommodation">Accommodation</a></li>
+      <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a></li>
+      <li><a href="#" id="logoutBtn" style="color: #999; border-bottom: none; padding-left: 20px; font-size: 13px;" data-i18n="nav_logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Language Selector -->
+  <div class="language-selector" style="position: fixed; top: 20px; right: 40px; display: flex; gap: 8px; z-index: 100; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(4px); padding: 4px 6px; border-radius: 2px; box-shadow: 0 1px 4px rgba(65, 64, 66, 0.1);">
+    <button class="lang-btn" data-lang="en" data-i18n="lang_en" onclick="setLanguage('en')">EN</button>
+    <button class="lang-btn" data-lang="fr" data-i18n="lang_fr" onclick="setLanguage('fr')">FR</button>
+    <button class="lang-btn" data-lang="el" data-i18n="lang_el" onclick="setLanguage('el')">EL</button>
+  </div>
+
+  <!-- Navigation (hidden) -->
+  <nav class="navbar" style="display: none;">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Our Wedding</a>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+        <li class="nav-item"><a href="venue.html" class="nav-link active" data-i18n="nav_venue">Venue</a></li>
+        <li class="nav-item"><a href="accommodation.html" class="nav-link" data-i18n="nav_accommodation">Accommodation</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+        <li class="nav-item"><a href="rsvp.html" class="nav-link primary-nav-link" data-i18n="nav_rsvp">RSVP</a></li>
+      </ul>
+      
+      <!-- Language Selector -->
+      <div class="language-selector-navbar">
+        <button class="lang-btn-nav" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn-nav" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn-nav" data-lang="el" onclick="setLanguage('el')">EL</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1 data-i18n="venue_heading">Venue</h1>
+  </section>
+
+  <!-- Venue Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-card">
+        <h2 style="text-align: center; margin-bottom: 20px; font-size: 2em; color: #333;">KTIMA XRISTIDI</h2>
+        <img src="venue-photo.jpg" alt="Venue" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 30px; display: block;">
+        <div class="venue-grid">
+          <div class="venue-info">
+            <h3 data-i18n="venue_address_label">📍 Address</h3>
+            <p data-i18n="venue_address">Ktima Xristidi<br>Thessaloniki, Greece</p>
+          </div>
+
+          <div class="venue-info">
+            <h3 data-i18n="venue_date_time">🕐 Timeline</h3>
+            <p><strong data-i18n="venue_arrival_time">Guest Arrival: 4:45 PM</strong><br><strong data-i18n="venue_ceremony_time">Ceremony: 5:15 PM</strong><br><strong data-i18n="venue_cocktail_time">Cocktail: 6:00 PM</strong></p>
+          </div>
+
+          <div class="venue-info">
+            <h3 data-i18n="venue_parking">🚗 Parking</h3>
+            <p data-i18n="venue_parking_desc">Parking is available on-site for all our guests.</p>
+          </div>
+
+          <div class="venue-info">
+            <h3 data-i18n="venue_spaces">🏛️ Spaces</h3>
+            <p data-i18n="venue_spaces_desc">The venue features both elegant indoor spaces and beautiful outdoor areas for your celebration.</p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <h3 data-i18n="venue_amenities">Amenities</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3033.450!2d22.931451425478095!3d40.47359915135645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135e4e9b9b9b9b9b%3A0x9b9b9b9b9b9b9b9b!2s%CE%9A%CF%84%CE%AE%CE%BC%CE%B1%20%CE%A7%CF%81%CE%B7%CF%83%CF%84%CE%AF%CE%B4%CE%B7%2C%20%CE%98%CE%B5%CF%83%CF%83%CE%B1%CE%BB%CE%BF%CE%BD%CE%AF%CE%BA%CE%B7!5e0!3m2!1sen!2sgr!4v" 
+                  width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="venue-details">
+          <h3 data-i18n="venue_details_title">Venue Details</h3>
+          <p data-i18n="venue_description">Ktima Xristidi is a beautiful wedding venue in Thessaloniki featuring elegant indoor spaces and stunning outdoor gardens. The venue provides the perfect setting for both the ceremony and celebrations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><span data-i18n="footer_text">© 2026 Our Wedding. All rights reserved.</span></p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="navigation.js"></script>
+  <script>
+    // Countdown Timer - Dynamic calculation
+    function calculateAndUpdateCountdown() {
+      const countdownEl = document.getElementById('countdownMessage');
+      if (!countdownEl) return;
+      
+      const now = new Date();
+      const weddingDate = new Date(2026, 8, 4); // September 4, 2026
+      
+      const timeDiff = weddingDate.getTime() - now.getTime();
+      
+      if (timeDiff <= 0) {
+        countdownEl.textContent = 'The Wedding Day!';
+        return;
+      }
+      
+      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      
+      // Get the days_to_go text from loaded translations
+      let daysText = 'days';
+      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
+        daysText = pageTranslations[currentLanguage]['days_to_go'];
+      }
+      
+      countdownEl.textContent = 'The final countdown : ' + days + ' ' + daysText;
+    }
+
+    // Start countdown when translations are ready
+    function startCountdown() {
+      calculateAndUpdateCountdown();
+      // Update every minute
+      setInterval(calculateAndUpdateCountdown, 60000);
+    }
+
+    // Listen for translations to load
+    if (translationsReady) {
+      // Already loaded
+      startCountdown();
+    } else {
+      // Wait for translations
+      document.addEventListener('translationsLoaded', startCountdown);
+    }
+    
+    // Listen for language changes
+    document.addEventListener('languageChanged', calculateAndUpdateCountdown);
+
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburgerMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    // Close mobile nav when a link is clicked
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

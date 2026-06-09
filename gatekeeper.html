@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Our Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #414042;
+      --text: #414042;
+      --text-light: #666;
+      --primary: #414042;
+      --primary-light: #676668;
+      --border: #e8e8e8;
+      --light-bg: #ffffff;
+      --white: #ffffff;
+    }
+
+    html, body {
+      font-family: "EB Garamond", ui-serif, "Georgia", "Times New Roman", serif;
+      background: var(--white);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-section {
+      width: 100%;
+      min-height: 750px;
+      background-color: #f5f5f5;
+      background-image: url('https://media-api.xogrp.com/images/6859029a-0250-49f0-9c0f-bdaf68f78c7b~rt_auto-rs_1700.h?ordering=explicit&quality=90');
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 60px 40px 100px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 767px) {
+      .hero-section {
+        background-image: url('https://media-api.xogrp.com/images/18bd50d4-601e-448b-9935-5c71120c8989~rt_auto-rs_480.h?ordering=explicit&quality=90');
+        min-height: 450px;
+        padding: 200px 20px 0 20px;
+        background-position: top center;
+        background-size: 100% auto;
+      }
+    }
+
+    .hero-title {
+      font-size: 54px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      color: var(--ink);
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      font-family: "EB Garamond", serif;
+      line-height: 1;
+    }
+
+    .hero-date {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: var(--text);
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      font-family: "EB Garamond", serif;
+    }
+
+    .hero-countdown {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: var(--text);
+      margin: 0;
+      text-transform: uppercase;
+      font-family: "EB Garamond", serif;
+    }
+
+    /* Navigation Menu */
+    .hero-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 0;
+      padding: 30px 40px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li {
+      margin: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+      transition: all 0.25s ease;
+      font-family: "EB Garamond", serif;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+
+    /* Remove old styles */
+    .hero-names-section,
+    .countdown-section,
+    .navigation-menu,
+    .nav-menu-gatekeeper,
+    .nav-item-gatekeeper,
+    .nav-link-gatekeeper,
+    .hero-names,
+    .bride-name,
+    .groom-name,
+    .hero-and,
+    .countdown-date,
+    .countdown-target,
+    .countdown-container,
+    .countdown-item,
+    .countdown-number,
+    .countdown-label {
+      display: none !important;
+    }
+
+    /* Language Selector - Top Right */
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
+      padding: 2px 4px;
+      border-radius: 2px;
+      box-shadow: 0 1px 4px rgba(65, 64, 66, 0.1);
+    }
+
+    .lang-btn {
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--primary);
+      cursor: pointer;
+      font-family: "EB Garamond", serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      outline: none;
+      border-radius: 0;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--primary);
+      background: rgba(65, 64, 66, 0.05);
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Hero Names Section */
+    .hero-names-section {
+      text-align: center;
+      padding: 40px 40px 20px;
+      background: var(--white);
+    }
+
+    .hero-names {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .bride-name,
+    .groom-name {
+      font-size: 54px;
+      font-weight: 500;
+      letter-spacing: 6px;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1;
+      font-family: "EB Garamond", serif;
+      text-transform: uppercase;
+    }
+
+    .hero-and {
+      font-size: 32px;
+      color: var(--primary);
+      font-weight: 500;
+      letter-spacing: 2px;
+      font-family: "EB Garamond", serif;
+      text-transform: uppercase;
+    }
+
+    /* Navigation Menu Below Countdown */
+    .navigation-menu {
+      background: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-menu-gatekeeper {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-item-gatekeeper {
+      margin: 0;
+    }
+
+    .nav-link-gatekeeper {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-link-gatekeeper:hover {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+
+    /* Countdown Section */
+    .countdown-section {
+      background: var(--light-bg);
+      padding: 40px 40px 20px 40px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .countdown-date {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    .countdown-target {
+      font-size: 32px;
+      color: var(--ink);
+      margin-bottom: 60px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      text-align: center;
+      min-width: 80px;
+    }
+
+    .countdown-number {
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .countdown-label {
+      font-size: 12px;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Gatekeeper Form Section */
+    .gatekeeper-section {
+      padding: 80px 40px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gatekeeper-container {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .gatekeeper-card {
+      background: var(--white);
+      border-radius: 0;
+      padding: 60px 40px;
+      width: 100%;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .gatekeeper-header {
+      margin-bottom: 20px;
+    }
+
+    .gatekeeper-header h2 {
+      font-size: 32px;
+      color: var(--ink);
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    .gatekeeper-subtitle {
+      font-size: 15px;
+      color: var(--text-light);
+      margin: 16px 0 32px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 0;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-size: 15px;
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+      caret-color: var(--primary);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="text"]:hover {
+      border-color: var(--primary);
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(65, 64, 66, 0.1);
+    }
+
+    input[type="text"]::placeholder {
+      color: #999;
+    }
+
+    .gatekeeper-btn {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 0;
+      background: var(--primary);
+      color: var(--white);
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-family: inherit;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .gatekeeper-btn:hover {
+      background: var(--primary-light);
+      border-color: var(--primary-light);
+    }
+
+    .gatekeeper-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .error-message {
+      color: #b9374c;
+      text-align: center;
+      margin-top: 16px;
+      background: #fff1f3;
+      border-left: 4px solid #b9374c;
+      padding: 12px 16px;
+      display: none;
+      font-size: 13px;
+      border-radius: 0;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    .loading {
+      display: none;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(65, 64, 66, 0.3);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--light-bg);
+      border-top: 1px solid var(--border);
+      padding: 40px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 1024px) {
+      .bride-name,
+      .groom-name {
+        font-size: 48px;
+      }
+
+      .hero-and {
+        font-size: 28px;
+      }
+
+      .countdown-container {
+        gap: 40px;
+      }
+
+      .countdown-number {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .language-selector {
+        position: static;
+        justify-content: center;
+        margin: 20px 0;
+        padding: 0 20px;
+      }
+
+      .hero-names-section::before,
+      .hero-names-section::after {
+        font-size: 20px;
+        letter-spacing: 15px;
+        margin: 15px 0;
+      }
+
+      .hero-names {
+        gap: 20px;
+      }
+
+      .bride-name,
+      .groom-name {
+        font-size: 36px;
+      }
+
+      .hero-and {
+        font-size: 20px;
+      }
+
+      .countdown-section {
+        padding: 50px 20px;
+      }
+
+      .countdown-target {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+
+      .countdown-container {
+        gap: 30px;
+      }
+
+      .countdown-number {
+        font-size: 32px;
+      }
+
+      .countdown-item {
+        min-width: 70px;
+      }
+
+      .gatekeeper-section {
+        padding: 50px 20px;
+      }
+
+      .gatekeeper-card {
+        padding: 40px 24px;
+      }
+
+      .gatekeeper-header h2 {
+        font-size: 24px;
+      }
+
+      input[type="text"] {
+        font-size: 16px;
+        padding: 12px;
+      }
+
+      .gatekeeper-btn {
+        padding: 12px 16px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-names-section {
+        padding: 40px 15px;
+      }
+
+      .bride-name,
+      .groom-name {
+        font-size: 28px;
+      }
+
+      .hero-and {
+        font-size: 16px;
+      }
+
+      .countdown-section {
+        padding: 30px 15px;
+      }
+
+      .countdown-date {
+        font-size: 14px;
+      }
+
+      .countdown-target {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .countdown-container {
+        gap: 20px;
+      }
+
+      .countdown-number {
+        font-size: 24px;
+      }
+
+      .countdown-item {
+        min-width: 60px;
+      }
+
+      .countdown-label {
+        font-size: 10px;
+      }
+
+      .gatekeeper-section {
+        padding: 30px 15px;
+      }
+
+      .gatekeeper-card {
+        padding: 30px 20px;
+      }
+
+      .gatekeeper-header h2 {
+        font-size: 20px;
+      }
+
+      .lang-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+      }
+
+      .footer {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <button class="lang-btn" data-lang="en" data-i18n="lang_en" onclick="setLanguage('en')">EN</button>
+    <button class="lang-btn" data-lang="fr" data-i18n="lang_fr" onclick="setLanguage('fr')">FR</button>
+    <button class="lang-btn" data-lang="el" data-i18n="lang_el" onclick="setLanguage('el')">EL</button>
+  </div>
+
+  <!-- Hero Section with Floral Background -->
+  <div class="hero-section">
+    <!-- Couple Names -->
+    <h1 class="hero-title">LARA & IOSIF</h1>
+    
+    <!-- Wedding Date -->
+    <p class="hero-date" data-i18n="wedding_date" style="display: none;">SEPTEMBER 4, 2026</p>
+    
+    <!-- Countdown Message -->
+    <p class="hero-countdown" id="countdownMessage" style="display: none;">Loading...</p>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="hero-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="venue.html" data-i18n="nav_venue">Venue</a></li>
+      <li><a href="accommodation.html" data-i18n="nav_accommodation">Accommodation</a></li>
+      <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <!-- Gatekeeper Form Section -->
+  <div class="gatekeeper-section">
+    <div class="gatekeeper-container">
+      <div class="gatekeeper-card">
+        <div class="gatekeeper-header">
+          <h2 data-i18n="welcome">Welcome</h2>
+        </div>
+        <p class="gatekeeper-subtitle" data-i18n="enter_name_prompt">Please enter your name to access the wedding details.</p>
+
+        <div class="form-group">
+          <input
+            type="text"
+            id="guestName"
+            data-i18n-placeholder="enter_your_name"
+            placeholder="Enter your name"
+            autocomplete="name"
+          />
+        </div>
+
+        <button class="gatekeeper-btn" id="enterBtn" data-i18n="verify_and_enter">Verify & Enter</button>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <div class="loading" id="loadingIndicator">
+          <span class="spinner"></span><span data-i18n="verifying">Verifying...</span>
+        </div>
+
+        <p class="footer-text" data-i18n="guest_list_note">Make sure you are on our guest list.</p>
+        <div style="margin-top: 30px; text-align: center;">
+          <a href="admin.html" style="font-size: 11px; color: #ccc; text-decoration: none; letter-spacing: 1px;">EDIT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><span data-i18n="footer_text">© 2026 Lara & Iosif's Wedding. All rights reserved.</span></p>
+  </footer>
+
+  <script src="gatekeeper-i18n.js"></script>
+  <script src="i18n.js"></script>
+  <script src="gatekeeper.js"></script>
+  <script>
+    // Countdown Timer - Dynamic calculation
+    function calculateAndUpdateCountdown() {
+      const countdownEl = document.getElementById('countdownMessage');
+      if (!countdownEl) return;
+      
+      const now = new Date();
+      const weddingDate = new Date(2026, 8, 4); // September 4, 2026
+      
+      const timeDiff = weddingDate.getTime() - now.getTime();
+      
+      if (timeDiff <= 0) {
+        countdownEl.textContent = 'The Wedding Day!';
+        return;
+      }
+      
+      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      
+      // Get the days_to_go text from loaded translations
+      let daysText = 'DAYS TO GO!';
+      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
+        daysText = pageTranslations[currentLanguage]['days_to_go'];
+      }
+      
+      countdownEl.textContent = days + ' ' + daysText;
+    }
+
+    // Wait for translations to load, then start countdown
+    async function startCountdown() {
+      // Give a small moment for async loading to complete
+      setTimeout(() => {
+        calculateAndUpdateCountdown();
+        // Update every minute
+        setInterval(calculateAndUpdateCountdown, 60000);
+      }, 100);
+    }
+
+    // Start countdown when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startCountdown);
+    } else {
+      startCountdown();
+    }
+  </script>
+</body>
+</html>
+

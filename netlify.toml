@@ -1,0 +1,22 @@
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/index.html"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+[context.production]
+  environment = { CONTEXT = "production" }
+
+[context.deploy-preview]
+  command = ""
+
+[context.branch-deploy]
+  command = ""

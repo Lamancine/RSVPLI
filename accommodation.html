@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accommodation - Our Wedding</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      height: auto;
+      flex-wrap: wrap;
+    }
+
+    .nav-logo {
+      order: 1;
+      padding: 20px 0;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      order: 2;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    .language-selector-navbar {
+      order: 3;
+      display: flex;
+      gap: 8px;
+      padding: 20px 0;
+      white-space: nowrap;
+    }
+
+    .lang-btn-nav {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      outline: none;
+      border-radius: 0;
+      font-family: inherit;
+    }
+
+    .lang-btn-nav:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .lang-btn-nav.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 20px;
+        gap: 20px;
+      }
+
+      .nav-menu {
+        gap: 15px;
+        flex-basis: 100%;
+        order: 3;
+      }
+
+      .language-selector-navbar {
+        order: 4;
+        flex-basis: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script src="auth-check.js"></script>
+  
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <span class="mobile-header-logo">L&I</span>
+  </div>
+
+  <!-- Hamburger Menu for Mobile -->
+  <div class="hamburger-menu" id="hamburgerMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-i18n="nav_home">Home</a>
+    <a href="venue.html" data-i18n="nav_venue">Venue</a>
+    <a href="accommodation.html" data-i18n="nav_accommodation">Accommodation</a>
+    <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+    <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+    <a href="#" id="logoutBtn" data-i18n="nav_logout">Logout</a>
+  </nav>
+  
+  <!-- Floral Arch Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">LARA & IOSIF</h1>
+    <p class="hero-date" data-i18n="wedding_date">SEPTEMBER 4, 2026</p>
+    <p class="hero-countdown" id="countdownMessage">Loading...</p>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="hero-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="venue.html" data-i18n="nav_venue">Venue</a></li>
+      <li><a href="accommodation.html" data-i18n="nav_accommodation">Accommodation</a></li>
+      <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a></li>
+      <li><a href="#" id="logoutBtn" style="color: #999; border-bottom: none; padding-left: 20px; font-size: 13px;" data-i18n="nav_logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Language Selector -->
+  <div class="language-selector" style="position: fixed; top: 20px; right: 40px; display: flex; gap: 8px; z-index: 100; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(4px); padding: 4px 6px; border-radius: 2px; box-shadow: 0 1px 4px rgba(65, 64, 66, 0.1);">
+    <button class="lang-btn" data-lang="en" data-i18n="lang_en" onclick="setLanguage('en')">EN</button>
+    <button class="lang-btn" data-lang="fr" data-i18n="lang_fr" onclick="setLanguage('fr')">FR</button>
+    <button class="lang-btn" data-lang="el" data-i18n="lang_el" onclick="setLanguage('el')">EL</button>
+  </div>
+
+  <!-- Navigation (hidden) -->
+  <nav class="navbar" style="display: none;">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">Our Wedding</a>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+        <li class="nav-item"><a href="venue.html" class="nav-link" data-i18n="nav_venue">Venue</a></li>
+        <li class="nav-item"><a href="accommodation.html" class="nav-link active" data-i18n="nav_accommodation">Accommodation</a></li>
+        <li class="nav-item"><a href="faq.html" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+        <li class="nav-item"><a href="rsvp.html" class="nav-link primary-nav-link" data-i18n="nav_rsvp">RSVP</a></li>
+      </ul>
+      
+      <!-- Language Selector -->
+      <div class="language-selector-navbar">
+        <button class="lang-btn-nav" data-lang="en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn-nav" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn-nav" data-lang="el" onclick="setLanguage('el')">EL</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1 data-i18n="accommodation_heading">Accommodation</h1>
+  </section>
+
+  <!-- Accommodation Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-card">
+        <h2 data-i18n="accommodation_heading">Where to Stay</h2>
+        <p class="section-intro" data-i18n="accommodation_intro">We have partnered with several hotels to offer our guests special rates. Please mention the wedding when booking to receive your discount.</p>
+
+        <!-- Hotels Grid -->
+        <div class="hotels-grid">
+          <!-- Hotel 1 -->
+          <div class="hotel-card">
+            <h3 data-i18n="hotel_1_name">The Luxe Athens Hotel</h3>
+            <p class="hotel-rating" data-i18n="hotel_1_rating">⭐⭐⭐⭐⭐ 5-star</p>
+            <p class="hotel-distance" data-i18n="hotel_1_distance">2.5 km from venue</p>
+            <ul class="hotel-amenities" data-i18n="hotel_1_amenities">
+              <li>✓ Free WiFi</li>
+              <li>✓ Spa & Wellness</li>
+              <li>✓ Restaurant</li>
+            </ul>
+            <p class="hotel-rate" data-i18n="hotel_1_rate"><strong>Guest Rate:</strong> €180/night</p>
+            <p class="hotel-contact" data-i18n="hotel_1_contact">📞 +30 210 9999 111</p>
+          </div>
+
+          <!-- Hotel 2 -->
+          <div class="hotel-card">
+            <h3 data-i18n="hotel_2_name">The Botanical Inn</h3>
+            <p class="hotel-rating" data-i18n="hotel_2_rating">⭐⭐⭐⭐ 4-star</p>
+            <p class="hotel-distance" data-i18n="hotel_2_distance">1.8 km from venue</p>
+            <ul class="hotel-amenities" data-i18n="hotel_2_amenities">
+              <li>✓ Free breakfast</li>
+              <li>✓ Parking</li>
+              <li>✓ Concierge</li>
+            </ul>
+            <p class="hotel-rate" data-i18n="hotel_2_rate"><strong>Guest Rate:</strong> €120/night</p>
+            <p class="hotel-contact" data-i18n="hotel_2_contact">📞 +30 210 8888 222</p>
+          </div>
+
+          <!-- Hotel 3 -->
+          <div class="hotel-card">
+            <h3 data-i18n="hotel_3_name">Hotel Serenity</h3>
+            <p class="hotel-rating" data-i18n="hotel_3_rating">⭐⭐⭐ 3-star</p>
+            <p class="hotel-distance" data-i18n="hotel_3_distance">3.2 km from venue</p>
+            <ul class="hotel-amenities" data-i18n="hotel_3_amenities">
+              <li>✓ Budget-friendly</li>
+              <li>✓ Transport included</li>
+              <li>✓ Breakfast</li>
+            </ul>
+            <p class="hotel-rate" data-i18n="hotel_3_rate"><strong>Guest Rate:</strong> €75/night</p>
+            <p class="hotel-contact" data-i18n="hotel_3_contact">📞 +30 210 7777 333</p>
+          </div>
+        </div>
+
+        <!-- Booking Information -->
+        <div class="booking-info">
+          <h3 data-i18n="booking_info_title">Booking Instructions</h3>
+          <ol>
+            <li data-i18n="booking_step_1">Contact the hotel directly using the phone number provided</li>
+            <li data-i18n="booking_step_2">Mention the wedding in your booking</li>
+            <li data-i18n="booking_step_3">Provide your name and dates of stay</li>
+            <li data-i18n="booking_step_4">Special rates valid until January 31st, 2026</li>
+          </ol>
+        </div>
+
+        <!-- Alternative Accommodations -->
+        <div class="alternative-stays">
+          <h3 data-i18n="alternative_stays_title">Other Options</h3>
+          <p data-i18n="alternative_stays_desc">If the above options don't suit you, Athens has many other hotels and vacation rentals available through online platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><span data-i18n="footer_text">© 2026 Our Wedding. All rights reserved.</span></p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="navigation.js"></script>
+  <script>
+    // Countdown Timer - Dynamic calculation
+    function calculateAndUpdateCountdown() {
+      const countdownEl = document.getElementById('countdownMessage');
+      if (!countdownEl) return;
+      
+      const now = new Date();
+      const weddingDate = new Date(2026, 8, 4); // September 4, 2026
+      
+      const timeDiff = weddingDate.getTime() - now.getTime();
+      
+      if (timeDiff <= 0) {
+        countdownEl.textContent = 'The Wedding Day!';
+        return;
+      }
+      
+      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      
+      // Get the days_to_go text from loaded translations
+      let daysText = 'days';
+      if (typeof pageTranslations !== 'undefined' && pageTranslations[currentLanguage] && pageTranslations[currentLanguage]['days_to_go']) {
+        daysText = pageTranslations[currentLanguage]['days_to_go'];
+      }
+      
+      countdownEl.textContent = 'The final countdown : ' + days + ' ' + daysText;
+    }
+
+    // Start countdown when translations are ready
+    function startCountdown() {
+      calculateAndUpdateCountdown();
+      // Update every minute
+      setInterval(calculateAndUpdateCountdown, 60000);
+    }
+
+    // Listen for translations to load
+    if (translationsReady) {
+      // Already loaded
+      startCountdown();
+    } else {
+      // Wait for translations
+      document.addEventListener('translationsLoaded', startCountdown);
+    }
+    
+    // Listen for language changes
+    document.addEventListener('languageChanged', calculateAndUpdateCountdown);
+
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburgerMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    // Close mobile nav when a link is clicked
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
