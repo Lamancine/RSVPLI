@@ -95,18 +95,16 @@
       }
     }
   </style>
-  <script src="https://cdn.builder.io/js/webcomponents" onload="builderInit()"></script>
   <script>
+  // Prepare builder namespace and define init handler before loading SDK
   window.builder = window.builder || [];
   function builderInit(){
     if (window.builder && typeof window.builder.init === 'function'){
       window.builder.init("bf3aeb9364f74f0f8f90c44c53306e72");
-    } else {
-      // If the SDK hasn't exposed init yet, queue the init call for the SDK to pick up
-      window.builder.push({ init: ["bf3aeb9364f74f0f8f90c44c53306e72"] });
     }
   }
   </script>
+  <script src="https://cdn.builder.io/js/webcomponents" onload="builderInit()"></script>
 </head>
 <body>
   <script src="auth-check.js"></script>
@@ -147,11 +145,11 @@
     }
 
     // Listen for translations to load
-    if (translationsReady) {
+    if (typeof translationsReady !== 'undefined' && translationsReady) {
       // Already loaded
       startCountdown();
     } else {
-      // Wait for translations
+      // Wait for translations (or start when translationsLoaded event fires)
       document.addEventListener('translationsLoaded', startCountdown);
     }
     
