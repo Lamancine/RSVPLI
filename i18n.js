@@ -41,7 +41,7 @@ const pageTranslations = {
     
     // Venue Page
     venue_heading: "Our Venue",
-    venue_intro: "We've chosen a beautiful location in the heart of Athens for our celebration.",
+    venue_intro: "We've chosen a beautiful location in Thessaloniki for our celebration.",
     venue_date_time: "Date & Time",
     venue_location: "Location",
     venue_address_label: "Address",
@@ -59,7 +59,7 @@ const pageTranslations = {
     
     // Accommodation Page
     accommodation_heading: "Accommodation",
-    accommodation_intro: "We've partnered with several hotels to offer special rates for our guests. Please note that rates are valid until January 31st, 2026.",
+    accommodation_intro: "We have selected a few accommodations in Perea (Thessaloniki), about 20 minutes from the venue. Filter with a rating above 8.0 to avoid surprises!",
     hotel_1_name: "Luxury Palace Hotel",
     hotel_1_rating: "5-star luxury",
     hotel_1_distance: "2 km from venue",
@@ -84,7 +84,7 @@ const pageTranslations = {
     booking_step_3: "Provide your name and number of rooms needed",
     booking_step_4: "Confirm your reservation before January 31st, 2026",
     alternative_stays_title: "Alternative Accommodations",
-    alternative_stays_desc: "If the above options don't suit you, Athens has many other hotels and vacation rentals available through online platforms.",
+    alternative_stays_desc: "If none of the above suit you, Thessaloniki has many other hotels available on booking.com, kayak, etc.",
     
     // FAQ Page
     faq_heading: "Frequently Asked Questions",
@@ -177,7 +177,7 @@ const pageTranslations = {
     
     // Venue Page
     venue_heading: "Notre Lieu",
-    venue_intro: "Nous avons choisi un bel endroit au cœur d'Athènes pour notre célébration.",
+    venue_intro: "Nous avons choisi un beau lieu à Thessalonique pour notre célébration.",
     venue_date_time: "Date et Heure",
     venue_location: "Localisation",
     venue_address_label: "Adresse",
@@ -195,7 +195,7 @@ const pageTranslations = {
     
     // Accommodation Page
     accommodation_heading: "Hébergement",
-    accommodation_intro: "Nous avons des partenariats avec plusieurs hôtels pour offrir des tarifs spéciaux à nos invités. Veuillez noter que les tarifs sont valables jusqu'au 31 janvier 2026.",
+    accommodation_intro: "Nous avons sélectionné quelques logements sur booking.com à Perea (Thessalonique), à environ 20 minutes du lieu. Pensez à filtrer avec une note supérieure à 8.0 pour éviter les mauvaises surprises !",
     hotel_1_name: "Hôtel Luxury Palace",
     hotel_1_rating: "Luxe 5 étoiles",
     hotel_1_distance: "2 km du lieu",
@@ -220,7 +220,7 @@ const pageTranslations = {
     booking_step_3: "Fournissez votre nom et le nombre de chambres nécessaires",
     booking_step_4: "Confirmez votre réservation avant le 31 janvier 2026",
     alternative_stays_title: "Hébergements Alternatifs",
-    alternative_stays_desc: "Si les options ci-dessus ne vous conviennent pas, Athènes dispose de nombreux autres hôtels et locations de vacances disponibles via des plateformes en ligne.",
+    alternative_stays_desc: "Si aucune option ci-dessus ne vous convient, Thessalonique dispose de nombreux hôtels disponibles sur booking.com, kayak, etc.",
     
     // FAQ Page
     faq_heading: "Questions Fréquemment Posées",
@@ -313,7 +313,7 @@ const pageTranslations = {
     
     // Venue Page
     venue_heading: "Ο Χώρος μας",
-    venue_intro: "Έχουμε επιλέξει ένα όμορφο σημείο στην καρδιά της Αθήνας για την γιορτή μας.",
+    venue_intro: "Έχουμε επιλέξει ένα όμορφο χώρο στη Θεσσαλονίκη για την γιορτή μας.",
     venue_date_time: "Ημερομηνία & Ώρα",
     venue_location: "Τοποθεσία",
     venue_address_label: "Διεύθυνση",
@@ -331,7 +331,7 @@ const pageTranslations = {
     
     // Accommodation Page
     accommodation_heading: "Κατάλυμα",
-    accommodation_intro: "Έχουμε συνεργαστεί με πολλά ξενοδοχεία για να προσφέρουμε ειδικές τιμές για τους καλεσμένους μας. Σημειώστε ότι οι τιμές ισχύουν έως και 31 Ιανουαρίου 2026.",
+    accommodation_intro: "Επιλέξαμε μερικά καταλύματα στη Βούλγαρη/Περαία (Θεσσαλονίκη), περίπου 20 λεπτά από τον χώρο. Φιλτράρετε με βαθμολογία 8.0+ για να αποφύγετε εκπλήξεις!",
     hotel_1_name: "Luxury Palace Hotel",
     hotel_1_rating: "Ξενοδοχείο 5 αστέρων",
     hotel_1_distance: "2 χλμ από τον χώρο",
@@ -356,7 +356,7 @@ const pageTranslations = {
     booking_step_3: "Δώστε το όνομά σας και τον αριθμό δωματίων που χρειάζεστε",
     booking_step_4: "Επιβεβαιώστε την κράτησή σας πριν από 31 Ιανουαρίου 2026",
     alternative_stays_title: "Εναλλακτικές Διαμονές",
-    alternative_stays_desc: "Εάν οι παραπάνω επιλογές δεν σας ταιριάζουν, η Αθήνα έχει πολλά άλλα ξενοδοχεία και εκμισθώσεις διακοπών διαθέσιμα μέσω διαδικτυακών πλατφορμών.",
+    alternative_stays_desc: "Εάν καμία από τις παραπάνω επιλογές δεν σας ταιριάζει, η Θεσσαλονίκη έχει πολλά ξενοδοχεία στο booking.com, kayak κ.λπ.",
     
     // FAQ Page
     faq_heading: "Συχνές Ερωτήσεις",
