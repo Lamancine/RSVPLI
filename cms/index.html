@@ -8,5 +8,30 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.registerPreviewStyle('/styles.css');
+
+    var TextsPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        return h('div', {style: {fontFamily: 'EB Garamond, serif', padding: '30px', lineHeight: '1.7', color: '#414042'}},
+          h('h2', {style: {borderBottom: '1px solid #e8e8e8', paddingBottom: '12px', marginBottom: '20px', fontSize: '22px', letterSpacing: '2px'}}, '✏️ Textes du site'),
+          h('h3', {style: {fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#999', marginTop: '24px', marginBottom: '8px'}}, '— Page Accueil —'),
+          h('p', {style: {fontWeight: '600', marginBottom: '4px'}}, entry.getIn(['data', 'story_heading_fr'])),
+          h('p', {style: {marginBottom: '12px'}}, entry.getIn(['data', 'welcome_text_1_fr'])),
+          h('p', {style: {marginBottom: '12px'}}, entry.getIn(['data', 'welcome_text_2_fr'])),
+          h('p', {style: {fontStyle: 'italic', color: '#999', marginBottom: '12px'}}, entry.getIn(['data', 'child_free_notice_fr'])),
+          h('h3', {style: {fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#999', marginTop: '24px', marginBottom: '8px'}}, '— Page Lieu —'),
+          h('p', {style: {marginBottom: '8px'}}, entry.getIn(['data', 'venue_intro_fr'])),
+          h('p', {style: {marginBottom: '8px'}}, entry.getIn(['data', 'venue_description_fr'])),
+          h('p', {style: {marginBottom: '8px'}}, '🚗 ' + entry.getIn(['data', 'venue_parking_desc_fr'])),
+          h('p', {style: {marginBottom: '8px'}}, '🏛️ ' + entry.getIn(['data', 'venue_spaces_desc_fr'])),
+          h('h3', {style: {fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', color: '#999', marginTop: '24px', marginBottom: '8px'}}, '— Pied de page —'),
+          h('p', {style: {color: '#999', fontSize: '13px'}}, entry.getIn(['data', 'footer_text_fr']))
+        );
+      }
+    });
+    CMS.registerPreviewTemplate('texts_all', TextsPreview);
+  </script>
 </body>
 </html>
