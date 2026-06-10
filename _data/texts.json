@@ -1,7 +1,9 @@
 {
+  "registry_thank_you_en": "Your presence is truly our greatest gift. However, for those who have asked, we have put together a small registry. You are absolutely not obligated to participate — your being there is more than enough.",
   "venue_parking_desc_en": "Parking is available on-site for all our guests.",
   "child_free_notice_en": "This is a child-free wedding. We appreciate your understanding.",
   "venue_address_el": "Ktima Xristidi, Θεσσαλονίκη, Ελλάδα",
+  "registry_thank_you_fr": "Votre présence est notre plus beau cadeau. Cependant, pour ceux qui nous ont posé la question, nous avons constitué une petite liste. Vous n'êtes absolument pas obligés d'y participer — être là avec nous est déjà tout ce qu'il nous faut.",
   "venue_parking_desc_fr": "Un parking est disponible sur place pour tous nos invités.",
   "child_free_notice_fr": "Ceci est un mariage sans enfants. Nous apprécions votre compréhension.",
   "venue_arrival_time_el": "Άφιξη Επισκεπτών: 17:30",
@@ -12,7 +14,7 @@
   "welcome_text_2_el": "Δείτε τις πληροφορίες για τον χώρο, τα καταλύματα και τις συχνές ερωτήσεις. Μην ξεχάσετε να δηλώσετε συμμετοχή!",
   "welcome_text_1_el": "Είμαστε τόσο χαρούμενοι που σας προσκαλούμε να γιορτάσετε τον γάμο μας. Αυτός ο ιστότοπος έχει όλα όσα χρειάζεστε.",
   "venue_intro_el": "Έχουμε επιλέξει ένα όμορφο χώρο στη Θεσσαλονίκη για την γιορτή μας.",
-  "welcome_text_2_en": "Check out the venue info, accommodations and FAQ. Don't forget to RSVP!",
+  "welcome_text_2_en": "Check out the venue info, accommodations and FAQ. \nDon't forget to RSVP!",
   "venue_ceremony_time_el": "Τελετή: 18:00",
   "welcome_text_1_en": "We are very pleased to invite you to celebrate our wedding. \nThis website has everything you need to make the most of our special day.",
   "venue_intro_en": "We've chosen to celebrate our union at Ktima Xristidi in Thessaloniki.",
@@ -20,7 +22,7 @@
   "story_heading_el": "💍 Η Ιστορία μας 💍",
   "venue_cocktail_time_el": "Κοκτέιλ: 19:00",
   "venue_ceremony_time_en": "Ceremony: 6:00 PM",
-  "welcome_text_2_fr": "Consultez les informations sur le lieu, les hébergements et la FAQ. N'oubliez pas de confirmer votre présence sur la page RSVP !",
+  "welcome_text_2_fr": "Consultez les informations sur le lieu, les hébergements et la FAQ. \nN'oubliez pas de confirmer votre présence sur la page RSVP !",
   "welcome_text_1_fr": "Nous sommes très heureux de vous inviter à célébrer notre mariage. \nCe site contient tout ce dont vous avez besoin pour organiser votre voyage et profiter au mieux de ce jour avec nous.",
   "venue_intro_fr": "Nous avons choisi de célébrer notre mariage au Ktima Xristidi à Thessalonique.",
   "quick_links_venue_desc_en": "Discover the venue where our celebration will take place.",
@@ -47,10 +49,8 @@
   "footer_text_fr": "© 2026 Gandalf the White Inc. Tous droits réservés.",
   "venue_description_el": "Το Ktima Xristidi είναι ένα εκπληκτικό κτήμα γάμου στη Θεσσαλονίκη, με κομψούς εσωτερικούς χώρους και όμορφους κήπους. Το τέλειο σκηνικό για την τελετή και τις γιορτές μας.",
   "venue_description_en": "Ktima Xristidi is a stunning wedding estate in Thessaloniki, with elegant indoor spaces and beautiful outdoor gardens. \nWe are planning on setting up a shuttle service from Peraia to Ktima Xristidi, if you're interested, please select the option in the RSVP Form.",
+  "registry_thank_you_el": "Η παρουσία σας είναι το πιο πολύτιμο δώρο μας. Ωστόσο, για όσους μας ρώτησαν, έχουμε φτιάξει μια μικρή λίστα. Δεν είστε καθόλου υποχρεωμένοι να συμμετάσχετε — το να είστε εκεί μαζί μας είναι ό,τι χρειαζόμαστε.",
   "venue_parking_desc_el": "Υπάρχει χώρος στάθμευσης στον χώρο για όλους τους καλεσμένους.",
   "child_free_notice_el": "Αυτός είναι ένας γάμος χωρίς παιδιά. Εκτιμούμε την κατανόησή σας.",
-  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressé, pensez à sélectionner l'option dans le formulaire RSVP.",
-  "registry_thank_you_fr": "Votre présence est notre plus beau cadeau. Cependant, pour ceux qui nous ont posé la question, nous avons constitué une petite liste. Vous n'êtes absolument pas obligés d'y participer — être là avec nous est déjà tout ce qu'il nous faut.",
-  "registry_thank_you_en": "Your presence is truly our greatest gift. However, for those who have asked, we have put together a small registry. You are absolutely not obligated to participate — your being there is more than enough.",
-  "registry_thank_you_el": "Η παρουσία σας είναι το πιο πολύτιμο δώρο μας. Ωστόσο, για όσους μας ρώτησαν, έχουμε φτιάξει μια μικρή λίστα. Δεν είστε καθόλου υποχρεωμένοι να συμμετάσχετε — το να είστε εκεί μαζί μας είναι ό,τι χρειαζόμαστε."
+  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressé, pensez à sélectionner l'option dans le formulaire RSVP."
 }
