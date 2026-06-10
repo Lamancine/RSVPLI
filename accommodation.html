@@ -200,14 +200,18 @@
   <script>
     let hotelsData = null;
 
+    function nl2br(str) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    }
+
     function renderHotels(lang) {
       if (!hotelsData) return;
       const suffix = lang === 'el' ? '_el' : (lang === 'fr' ? '_fr' : '_en');
       const intro = hotelsData['intro' + suffix] || hotelsData.intro_fr;
-      document.getElementById('hotelsIntro').textContent = intro;
+      document.getElementById('hotelsIntro').innerHTML = nl2br(intro);
       document.getElementById('hotelsGrid').innerHTML = hotelsData.items.map(h => {
         const note = h['note' + suffix] || '';
-        const noteHtml = note ? `<div class="hotel-note" style="background:#f9f5ef;border-left:3px solid #c9a227;padding:10px 14px;margin:12px 0;font-size:14px;line-height:1.5;">${note}</div>` : '';
+        const noteHtml = note ? `<div class="hotel-note" style="background:#f9f5ef;border-left:3px solid #c9a227;padding:10px 14px;margin:12px 0;font-size:14px;line-height:1.5;">${nl2br(note)}</div>` : '';
         const bookingBtn = h.booking_url ? `<a href="${h.booking_url}" target="_blank" class="link-btn" style="display:inline-block;margin-top:14px;">Voir sur Booking.com</a>` : '';
         return `
           <div class="hotel-card">
