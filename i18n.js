@@ -230,7 +230,7 @@ const pageTranslations = {
     alternative_stays_desc: "Si aucune option ci-dessus ne vous convient, Thessalonique dispose de nombreux hôtels disponibles sur booking.com, kayak, etc.",
     
     // FAQ Page
-    faq_heading: "Questions Fréquemment Posées",
+    faq_heading: "Foire aux Questions",
     faq_q1: "Quand et où est le mariage?",
     faq_a1: "Notre mariage aura lieu le vendredi 14 février 2026 à Ktima Xristidi, Thessaloniki, Grèce. Les invités doivent arriver à 16h45. La cérémonie commence à 17h15, suivi du cocktail à 18h00.",
     faq_q2: "Quelle est la date limite de RSVP?",
