@@ -293,7 +293,7 @@
       if (!rows.length) return;
       
       const header = rows.shift();
-      const nameColumns = [1, 2];
+      const nameColumns = [1, 2, 3];
       const emailIndex = header.findIndex(h => /email/i.test(h));
 
       guestRows = [];

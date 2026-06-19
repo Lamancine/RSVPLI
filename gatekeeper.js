@@ -73,8 +73,8 @@ async function loadGuestlist() {
 
     const header = rows.shift();
     
-      // Use columns B and C (indices 1 and 2) for guest names
-      const guestColIdxs = [1, 2];
+      // Use columns B, C and D (indices 1, 2 and 3) for guest names
+      const guestColIdxs = [1, 2, 3];
     guestIndex = new Map();
 
     // Build guest list and index
