@@ -83,13 +83,13 @@ collections:
 
           - name: "quick_links_faq_desc_fr"
             label: "Accueil — Carte FAQ : description (Français)"
-            widget: "string"
+            widget: "text"
           - name: "quick_links_faq_desc_en"
             label: "Accueil — FAQ card: description (English)"
-            widget: "string"
+            widget: "text"
           - name: "quick_links_faq_desc_el"
             label: "Αρχική — Κάρτα FAQ: περιγραφή (Ελληνικά)"
-            widget: "string"
+            widget: "text"
 
           # PAGE LIEU
           - name: "venue_intro_fr"
