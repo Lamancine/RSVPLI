@@ -183,31 +183,8 @@
       <div class="content-card">
         <h2 style="text-align: center; margin-bottom: 20px; font-size: 2em; color: #333;">KTIMA XRISTIDI</h2>
         <img src="venue-photo.jpg" alt="Venue" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 30px; display: block;">
-        <div class="venue-grid">
-          <div class="venue-info">
-            <h3 data-i18n="venue_address_label">📍 Address</h3>
-            <p data-i18n="venue_address">Ktima Xristidi<br>Thessaloniki, Greece</p>
-          </div>
-
-          <div class="venue-info">
-            <h3 data-i18n="venue_date_time">🕐 Timeline</h3>
-            <p><strong data-i18n="venue_arrival_time">Guest Arrival: 4:45 PM</strong><br><strong data-i18n="venue_ceremony_time">Ceremony: 5:15 PM</strong><br><strong data-i18n="venue_cocktail_time">Cocktail: 6:00 PM</strong></p>
-          </div>
-
-          <div class="venue-info">
-            <h3 data-i18n="venue_parking">🚗 Parking</h3>
-            <p data-i18n="venue_parking_desc">Parking is available on-site for all our guests.</p>
-          </div>
-
-          <div class="venue-info">
-            <h3 data-i18n="venue_spaces">🏛️ Spaces</h3>
-            <p data-i18n="venue_spaces_desc">The venue features both elegant indoor spaces and beautiful outdoor areas for your celebration.</p>
-          </div>
-
-          <div class="venue-info">
-            <h3 data-i18n="venue_shuttle">🚌 Shuttle Service</h3>
-            <p data-i18n="venue_shuttle_desc">We are planning a shuttle service (return) from Peraia to Ktima Xristidi. If you're interested, please select the option in the RSVP form.</p>
-          </div>
+        <div class="venue-grid" id="venueBoxesGrid">
+          <p style="color:#999;text-align:center;">Chargement…</p>
         </div>
 
         <div class="map-container">
@@ -252,11 +229,39 @@
       countdownEl.textContent = 'THE FINAL COUNTDOWN : ' + days + ' days';
     }
 
-    // Initial calculation
     calculateAndUpdateCountdown();
-    
-    // Update every minute to stay fresh
     setInterval(calculateAndUpdateCountdown, 60000);
+    document.addEventListener('languageChanged', calculateAndUpdateCountdown);
+
+    // Venue boxes
+    let venueBoxesData = null;
+
+    function nl2br(str) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    }
+
+    function renderVenueBoxes(lang) {
+      if (!venueBoxesData) return;
+      const suffix = lang === 'el' ? '_el' : (lang === 'fr' ? '_fr' : '_en');
+      document.getElementById('venueBoxesGrid').innerHTML = venueBoxesData.items.map(box => `
+        <div class="venue-info">
+          <h3>${box.icon || ''} ${box['title' + suffix] || box.title_fr}</h3>
+          <p>${nl2br(box['content' + suffix] || box.content_fr)}</p>
+        </div>
+      `).join('');
+    }
+
+    fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/venue_boxes.json')
+      .then(r => r.json())
+      .then(data => {
+        venueBoxesData = data;
+        renderVenueBoxes(typeof currentLanguage !== 'undefined' ? currentLanguage : 'fr');
+      })
+      .catch(() => {});
+
+    document.addEventListener('languageChanged', () => {
+      if (venueBoxesData) renderVenueBoxes(currentLanguage);
+    });
 
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburgerMenu');

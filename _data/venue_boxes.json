@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "icon": "📍",
+      "title_fr": "Adresse",
+      "title_en": "Address",
+      "title_el": "Διεύθυνση",
+      "content_fr": "Ktima Xristidi, Thessaloniki, Grèce",
+      "content_en": "Ktima Xristidi, Thessaloniki, Greece",
+      "content_el": "Ktima Xristidi, Θεσσαλονίκη, Ελλάδα"
+    },
+    {
+      "icon": "🕐",
+      "title_fr": "Programme",
+      "title_en": "Timeline",
+      "title_el": "Πρόγραμμα",
+      "content_fr": "Arrivée des Invités : 17:30\nCérémonie : 18:00\nCocktail : 19:00 (suivi d'un diner et de la soirée)",
+      "content_en": "Guest Arrival: 5:30 PM\nCeremony: 6:00 PM\nCocktail: 7:00 PM (followed by diner and party)",
+      "content_el": "Άφιξη Επισκεπτών: 17:30\nΤελετή: 18:00\nΚοκτέιλ: 19:00"
+    },
+    {
+      "icon": "🚗",
+      "title_fr": "Parking",
+      "title_en": "Parking",
+      "title_el": "Χώρος Στάθμευσης",
+      "content_fr": "Un parking est disponible sur place pour tous nos invités.",
+      "content_en": "Parking is available on-site for all our guests.",
+      "content_el": "Υπάρχει χώρος στάθμευσης στον χώρο για όλους τους καλεσμένους."
+    },
+    {
+      "icon": "🏛️",
+      "title_fr": "Espaces",
+      "title_en": "Spaces",
+      "title_el": "Χώροι",
+      "content_fr": "Le lieu dispose d'espaces intérieurs élégants et de beaux jardins extérieurs.",
+      "content_en": "The venue features elegant indoor spaces and beautiful outdoor gardens.",
+      "content_el": "Ο χώρος διαθέτει κομψούς εσωτερικούς χώρους και όμορφους εξωτερικούς κήπους."
+    },
+    {
+      "icon": "🚌",
+      "title_fr": "Navette",
+      "title_en": "Shuttle Service",
+      "title_el": "Σέρβις Μεταφοράς",
+      "content_fr": "Nous prévoyons une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressé, sélectionnez l'option dans le formulaire RSVP.",
+      "content_en": "We are planning a shuttle service (return) from Peraia to Ktima Xristidi. If you're interested, please select the option in the RSVP form.",
+      "content_el": "Σχεδιάζουμε σέρβις μεταφοράς (μετ' επιστροφής) από την Περαία προς το Ktima Xristidi. Αν ενδιαφέρεστε, επιλέξτε την αντίστοιχη επιλογή στη φόρμα RSVP."
+    }
+  ]
+}
