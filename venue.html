@@ -251,7 +251,7 @@
       `).join('');
     }
 
-    fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/venue_boxes.json')
+    fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/venue_boxes.json?_=' + Date.now())
       .then(r => r.json())
       .then(data => {
         venueBoxesData = data;

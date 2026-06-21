@@ -1,5 +1,5 @@
 // Charge les textes personnalisés depuis GitHub (pas de rebuild Netlify nécessaire)
-fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/texts.json')
+fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/texts.json?_=' + Date.now())
   .then(function(r) { return r.json(); })
   .then(function(data) {
     ['fr', 'en', 'el'].forEach(function(lang) {
