@@ -132,6 +132,16 @@ collections:
             label: "Χώρος — Περιγραφή χώρων (Ελληνικά)"
             widget: "string"
 
+          - name: "venue_shuttle_desc_fr"
+            label: "Lieu — Navette : description (Français)"
+            widget: "text"
+          - name: "venue_shuttle_desc_en"
+            label: "Lieu — Shuttle service: description (English)"
+            widget: "text"
+          - name: "venue_shuttle_desc_el"
+            label: "Χώρος — Σέρβις μεταφοράς (Ελληνικά)"
+            widget: "text"
+
           - name: "venue_heading_fr"
             label: "Lieu — Titre de la page (Français)"
             widget: "string"
