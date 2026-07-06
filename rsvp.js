@@ -691,22 +691,14 @@
       guests: payload.guests.map(({ _sections, ...rest }) => rest)
     };
 
+    // Show thank-you immediately for instant UX, send in background
+    closeReview();
+    goToStep(3);
+
     try {
-      const res = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify(cleanPayload) });
-      if (!res.ok) throw new Error("Server responded " + res.status);
-      let data = {};
-      try { data = await res.json(); } catch (_) { data = { status: "success" }; }
-      if (data.status === "success" || data.status === "ok") {
-        closeReview(); goToStep(3);
-      } else {
-        sendError.textContent  = data.message || "Error sending RSVP";
-        sendError.style.display = "block";
-        closeReview();
-      }
+      await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify(cleanPayload) });
     } catch (err) {
-      sendError.textContent  = "Error: " + (err.message || err);
-      sendError.style.display = "block";
-      closeReview();
+      console.warn("RSVP send error:", err);
     } finally {
       confirmBtn.disabled = false;
     }
