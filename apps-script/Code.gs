@@ -79,9 +79,10 @@ function doPost(e) {
     // Header contains both family-collapsed columns (Guest1/Guest2...) and per-guest columns
     const headerRow = [
       'Timestamp','Code','Attending','FamilySize',
-      'Guest1Name','Guest1Brunch','Guest1Shuttle','Guest1ShuttleDirection','Guest1Email','Guest1MainCourse','Guest1Languages','Guest1Diet',
-      'Guest2Name','Guest2Brunch','Guest2Shuttle','Guest2ShuttleDirection','Guest2Email','Guest2MainCourse','Guest2Languages','Guest2Diet',
-      'GuestIndex','GuestName','Brunch','Shuttle','ShuttleDirection','Email','MainCourse','MainCourseTick','Languages','Diet','Message','LanguageUI'
+      'Guest1Name','Guest1Brunch','Guest1Shuttle','Guest1Email','Guest1MainCourse','Guest1Languages','Guest1Diet',
+      'Guest2Name','Guest2Brunch','Guest2Shuttle','Guest2Email','Guest2MainCourse','Guest2Languages','Guest2Diet',
+      'GuestIndex','GuestName','Brunch','Shuttle','Email','MainCourse','MainCourseTick','Languages','Diet','Message','LanguageUI',
+      'Guest1ShuttleDirection','Guest2ShuttleDirection','ShuttleDirection'
     ];
 
     const existingHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn() || headerRow.length).getValues()[0];
@@ -109,7 +110,6 @@ function doPost(e) {
         g1.name || '',
         g1.brunch || '',
         g1.shuttle || '',
-        g1.shuttleDirection || '',
         g1.email || '',
         g1.mainCourse || '',
         g1.langs || '',
@@ -118,7 +118,6 @@ function doPost(e) {
         g2.name || '',
         g2.brunch || '',
         g2.shuttle || '',
-        g2.shuttleDirection || '',
         g2.email || '',
         g2.mainCourse || '',
         g2.langs || '',
@@ -128,14 +127,17 @@ function doPost(e) {
         '', // GuestName
         '', // Brunch
         '', // Shuttle
-        '', // ShuttleDirection
         '', // Email
         '', // MainCourse
         '', // MainCourseTick
         '', // Languages
         '', // Diet
         payload.message || '',
-        payload.languageUI || ''
+        payload.languageUI || '',
+
+        g1.shuttleDirection || '',
+        g2.shuttleDirection || '',
+        ''  // ShuttleDirection (per-guest, unused in collapsed row)
       ]);
     } else if (guests.length > 2) {
       // One row per guest for larger families
@@ -146,21 +148,24 @@ function doPost(e) {
           payload.attending || '',
           guests.length || 0,
 
-          '', '', '', '', '', '', '', '', // Guest1 cols empty (with ShuttleDirection)
-          '', '', '', '', '', '', '', '', // Guest2 cols empty (with ShuttleDirection)
+          '', '', '', '', '', '', '', // Guest1 cols empty
+          '', '', '', '', '', '', '', // Guest2 cols empty
 
           index + 1,
           guest.name || '',
           guest.brunch || '',
           guest.shuttle || '',
-          guest.shuttleDirection || '',
           guest.email || '',
           guest.mainCourse || '',
           guest.mainCourseTick || '',
           guest.langs || '',
           guest.diet || '',
           payload.message || '',
-          payload.languageUI || ''
+          payload.languageUI || '',
+
+          '', // Guest1ShuttleDirection (N/A for per-guest rows)
+          '', // Guest2ShuttleDirection (N/A for per-guest rows)
+          guest.shuttleDirection || ''
         ]);
       });
     }
