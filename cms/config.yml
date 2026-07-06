@@ -182,6 +182,124 @@ collections:
                 widget: "text"
 
   # -------------------------------------------------------
+  # FORMULAIRE RSVP — modifier les questions
+  # -------------------------------------------------------
+  - name: "rsvp_config"
+    label: "📋 Formulaire RSVP"
+    files:
+      - name: "questions"
+        label: "Questions du formulaire RSVP"
+        file: "_data/rsvp_config.json"
+        fields:
+          - name: "sections"
+            label: "Sections (tu peux en ajouter, en supprimer et les réordonner)"
+            widget: "list"
+            summary: "{{fields.label_fr}}"
+            fields:
+              - name: "id"
+                label: "Identifiant technique (ne pas modifier)"
+                widget: "string"
+              - name: "enabled"
+                label: "Afficher cette section ?"
+                widget: "boolean"
+                default: true
+              - name: "type"
+                label: "Type de question"
+                widget: "select"
+                options:
+                  - label: "Cases à cocher — choix multiples"
+                    value: "multi"
+                  - label: "Boutons radio — choix unique"
+                    value: "single"
+              - name: "required"
+                label: "Réponse obligatoire ?"
+                widget: "boolean"
+                default: false
+                required: false
+              - name: "label_fr"
+                label: "Question — Français"
+                widget: "text"
+              - name: "label_en"
+                label: "Question — English"
+                widget: "text"
+              - name: "label_el"
+                label: "Ερώτηση — Ελληνικά"
+                widget: "text"
+              - name: "options"
+                label: "Options de réponse"
+                widget: "list"
+                summary: "{{fields.label_fr}}"
+                fields:
+                  - name: "value"
+                    label: "Valeur (technique, en anglais, ne pas modifier)"
+                    widget: "string"
+                  - name: "label_fr"
+                    label: "Libellé — Français"
+                    widget: "string"
+                  - name: "label_en"
+                    label: "Label — English"
+                    widget: "string"
+                  - name: "label_el"
+                    label: "Ετικέτα — Ελληνικά"
+                    widget: "string"
+                  - name: "exclusive"
+                    label: "Exclusif (décoche les autres options)"
+                    widget: "boolean"
+                    default: false
+                    required: false
+                  - name: "has_text_input"
+                    label: "Avec champ texte libre"
+                    widget: "boolean"
+                    default: false
+                    required: false
+              - name: "note_fr"
+                label: "Note explicative — Français (optionnel)"
+                widget: "text"
+                required: false
+              - name: "note_en"
+                label: "Explanatory note — English (optional)"
+                widget: "text"
+                required: false
+              - name: "note_el"
+                label: "Επεξηγηματική σημείωση — Ελληνικά (προαιρετικό)"
+                widget: "text"
+                required: false
+              - name: "followup_trigger"
+                label: "Valeur qui déclenche une sous-question (optionnel)"
+                widget: "string"
+                required: false
+              - name: "followup_label_fr"
+                label: "Sous-question — Français (optionnel)"
+                widget: "text"
+                required: false
+              - name: "followup_label_en"
+                label: "Sub-question — English (optional)"
+                widget: "text"
+                required: false
+              - name: "followup_label_el"
+                label: "Υποερώτηση — Ελληνικά (προαιρετικό)"
+                widget: "text"
+                required: false
+              - name: "followup_options"
+                label: "Options de la sous-question (optionnel)"
+                widget: "list"
+                required: false
+                summary: "{{fields.label_fr}}"
+                fields:
+                  - name: "value"
+                    label: "Valeur (technique)"
+                    widget: "string"
+                  - name: "label_fr"
+                    label: "Libellé — Français"
+                    widget: "string"
+                  - name: "label_en"
+                    label: "Label — English"
+                    widget: "string"
+                  - name: "label_el"
+                    label: "Ετικέτα — Ελληνικά"
+                    widget: "string"
+
+  # -------------------------------------------------------
   # FAQ — ajouter / supprimer / modifier des questions
   # -------------------------------------------------------
   - name: "faq"

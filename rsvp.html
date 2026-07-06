@@ -136,21 +136,15 @@
       <!-- STEP 2: RSVP Form (No gatekeeper needed - already authenticated) -->
       <div id="step2" class="step active">
         <h3 id="familyTitle" class="hide-when-no"></h3>
-        <div class="lang hide-when-no">
-          <button type="button" class="langBtn" data-lang="fr" aria-label="Français">🇫🇷</button>
-          <button type="button" class="langBtn" data-lang="en" aria-label="English">🇬🇧</button>
-          <button type="button" class="langBtn" data-lang="gr" aria-label="Ελληνικά">🇬🇷</button>
-        </div>
         <form id="rsvpForm" onsubmit="return false">
-          <!-- Toujours visibles même quand "No" -->
           <h4 data-i18n-key="attend_label">Will you attend?</h4>
           <select id="attending" aria-label="Attendance">
             <option value="Yes" data-i18n-key="yes">Yes</option>
             <option value="No" data-i18n-key="no">No</option>
           </select>
           <div id="guestsContainer" class="hide-when-no"></div>
+          <div id="guest2Section" class="hide-when-no" style="display:none"></div>
           <textarea id="message" placeholder="Message"></textarea>
-          <!-- Ouvre le résumé avant envoi -->
           <button id="openReviewBtn" class="link-btn" type="button">
             <span id="btnText" data-i18n-key="review_rsvp">Review & Send</span>
             <span id="loader" class="spinner"></span>
