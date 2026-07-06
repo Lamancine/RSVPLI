@@ -8,10 +8,31 @@
       "label_en": "Languages spoken",
       "label_el": "Γλώσσες που μιλάτε",
       "options": [
-        {"value": "English", "label_fr": "Anglais", "label_en": "English", "label_el": "Αγγλικά"},
-        {"value": "French", "label_fr": "Français", "label_en": "French", "label_el": "Γαλλικά"},
-        {"value": "Greek", "label_fr": "Grec", "label_en": "Greek", "label_el": "Ελληνικά"},
-        {"value": "Other", "label_fr": "Autre (séparer par ;)", "label_en": "Other (separate with ;)", "label_el": "Άλλο (διαχωρίστε με ;)", "has_text_input": true}
+        {
+          "value": "English",
+          "label_fr": "Anglais",
+          "label_en": "English",
+          "label_el": "Αγγλικά"
+        },
+        {
+          "value": "French",
+          "label_fr": "Français",
+          "label_en": "French",
+          "label_el": "Γαλλικά"
+        },
+        {
+          "value": "Greek",
+          "label_fr": "Grec",
+          "label_en": "Greek",
+          "label_el": "Ελληνικά"
+        },
+        {
+          "value": "Other",
+          "label_fr": "Autre (séparer par ;)",
+          "label_en": "Other (separate with ;)",
+          "label_el": "Άλλο (διαχωρίστε με ;)",
+          "has_text_input": true
+        }
       ]
     },
     {
@@ -22,30 +43,77 @@
       "label_en": "Dietary restrictions",
       "label_el": "Διατροφικοί περιορισμοί",
       "options": [
-        {"value": "None", "label_fr": "Aucune", "label_en": "None", "label_el": "Καμία", "exclusive": true},
-        {"value": "Eggs", "label_fr": "Œufs", "label_en": "Eggs", "label_el": "Αυγά"},
-        {"value": "Nuts", "label_fr": "Fruits à coque", "label_en": "Nuts", "label_el": "Ξηροί καρποί"},
-        {"value": "Vegetarian", "label_fr": "Végétarien·ne", "label_en": "Vegetarian", "label_el": "Χορτοφαγικό"},
-        {"value": "Vegan", "label_fr": "Vegan", "label_en": "Vegan", "label_el": "Βίγκαν"},
-        {"value": "Fish", "label_fr": "Poisson", "label_en": "Fish", "label_el": "Ψάρια"},
-        {"value": "Other", "label_fr": "Autre", "label_en": "Other", "label_el": "Άλλο", "has_text_input": true}
+        {
+          "value": "None",
+          "label_fr": "Aucune",
+          "label_en": "None",
+          "label_el": "Καμία",
+          "exclusive": true
+        },
+        {
+          "value": "Eggs",
+          "label_fr": "Œufs",
+          "label_en": "Eggs",
+          "label_el": "Αυγά"
+        },
+        {
+          "value": "Nuts",
+          "label_fr": "Fruits à coque",
+          "label_en": "Nuts",
+          "label_el": "Ξηροί καρποί"
+        },
+        {
+          "value": "Vegetarian",
+          "label_fr": "Végétarien·ne",
+          "label_en": "Vegetarian",
+          "label_el": "Χορτοφαγικό"
+        },
+        {
+          "value": "Vegan",
+          "label_fr": "Vegan",
+          "label_en": "Vegan",
+          "label_el": "Βίγκαν"
+        },
+        {
+          "value": "Fish",
+          "label_fr": "Poisson",
+          "label_en": "Fish",
+          "label_el": "Ψάρια"
+        },
+        {
+          "value": "Other",
+          "label_fr": "Autre",
+          "label_en": "Other",
+          "label_el": "Άλλο",
+          "has_text_input": true
+        }
       ]
     },
     {
-      "id": "main_course",
       "enabled": true,
-      "type": "single",
-      "required": true,
-      "label_fr": "Préférence du plat principal",
-      "label_en": "Main course preference",
       "label_el": "Επιλογή κυρίως πιάτου",
-      "note_fr": "Si vous n'avez pas coché végétarien/végan ci-dessus, veuillez noter qu'il y aura un plat de viande pour tout le monde en entrée",
-      "note_en": "If you haven't checked a vegetarian/vegan box above, please note that there will be a meat course for everybody as starters",
       "note_el": "Αν δεν έχετε επιλέξει χορτοφαγικό/βίγκαν παραπάνω, παρακαλώ σημειώστε ότι θα υπάρχει πιάτο με κρέας για όλους ως ορεκτικό",
+      "label_en": "Main course preference",
+      "note_en": "If you haven't checked a vegetarian/vegan box above, please note that there will be a meat course for everybody as starters",
+      "label_fr": "Préférence du plat principal",
+      "note_fr": "Si vous n'avez pas coché végétarien/végan ci-dessus, veuillez noter qu'il y aura un plat de viande pour tout le monde en entrée",
+      "type": "single",
+      "id": "main_course",
       "options": [
-        {"value": "Beef", "label_fr": "Bœuf", "label_en": "Beef", "label_el": "Μοσχάρι"},
-        {"value": "Fish", "label_fr": "Poisson", "label_en": "Fish", "label_el": "Ψάρι"}
-      ]
+        {
+          "value": "Beef",
+          "label_fr": "Bœuf",
+          "label_en": "Beef",
+          "label_el": "Μπιφτέκι Μοσχαρίσιο"
+        },
+        {
+          "value": "Fish",
+          "label_fr": "Poisson",
+          "label_en": "Fish",
+          "label_el": "Ψάρι"
+        }
+      ],
+      "required": true
     },
     {
       "id": "brunch",
@@ -55,29 +123,64 @@
       "label_en": "Will you join us for brunch the next day (Saturday, Sept. 5th) at Golden Star City Resort in Peraia?",
       "label_el": "Θα μας συντροφεύατε για brunch (Σάββατο, 5 Σεπτ.) την επόμενη ημέρα στο Golden Star City Resort στην Περαία;",
       "options": [
-        {"value": "Yes", "label_fr": "Oui, j'y serai !", "label_en": "Yes, I'll be there!", "label_el": "Ναι, θα είμαι εκεί!"},
-        {"value": "No", "label_fr": "Non, merci", "label_en": "No, thank you", "label_el": "Όχι, ευχαριστώ"}
+        {
+          "value": "Yes",
+          "label_fr": "Oui, j'y serai !",
+          "label_en": "Yes, I'll be there!",
+          "label_el": "Ναι, θα είμαι εκεί!"
+        },
+        {
+          "value": "No",
+          "label_fr": "Non, merci",
+          "label_en": "No, thank you",
+          "label_el": "Όχι, ευχαριστώ"
+        }
       ]
     },
     {
-      "id": "shuttle",
       "enabled": true,
-      "type": "single",
-      "label_fr": "Le jour du mariage (vendredi 4 sept.) souhaitez-vous utiliser une navette de Peraia - Golden Star City Resort à Ktima Xristidi ?",
-      "label_en": "On the wedding day (Friday, Sept. 4th), would you like to use a shuttle from Peraia - Golden Star City Resort to Ktima Xristidi?",
-      "label_el": "Την ημέρα του γάμου (Παρασκευή, 4 Σεπτ.) θα θέλατε να χρησιμοποιήσετε λεωφορείο από το Peraia - Golden Star City Resort προς το Ktima Xristidi;",
-      "options": [
-        {"value": "No", "label_fr": "Non", "label_en": "No", "label_el": "Όχι"},
-        {"value": "Yes", "label_fr": "Oui", "label_en": "Yes", "label_el": "Ναι"}
-      ],
       "followup_trigger": "Yes",
-      "followup_label_fr": "Pour quel(s) trajet(s) souhaitez-vous la navette ?",
-      "followup_label_en": "Which trip(s) would you like the shuttle for?",
       "followup_label_el": "Για ποια διαδρομή θέλετε το λεωφορείο;",
+      "followup_label_en": "Which trip(s) would you like the shuttle for?",
+      "followup_label_fr": "Pour quel(s) trajet(s) souhaitez-vous la navette ?",
       "followup_options": [
-        {"value": "Round trip", "label_fr": "Aller-retour", "label_en": "Round trip", "label_el": "Μετ' επιστροφής"},
-        {"value": "One way", "label_fr": "Aller seulement", "label_en": "One way (to venue)", "label_el": "Μόνο μέχρι τον χώρο"},
-        {"value": "Return only", "label_fr": "Retour seulement", "label_en": "Return only", "label_el": "Μόνο επιστροφή"}
+        {
+          "value": "Round trip",
+          "label_fr": "Aller-retour",
+          "label_en": "Round trip",
+          "label_el": "Μετ' επιστροφής"
+        },
+        {
+          "value": "One way",
+          "label_fr": "Aller seulement",
+          "label_en": "One way (to venue)",
+          "label_el": "Μόνο μέχρι τον χώρο"
+        },
+        {
+          "value": "Return only",
+          "label_fr": "Retour seulement",
+          "label_en": "Return only",
+          "label_el": "Μόνο επιστροφή"
+        }
+      ],
+      "label_el": "Την ημέρα του γάμου (Παρασκευή, 4 Σεπτ.) θα θέλατε να χρησιμοποιήσετε λεωφορείο από το Peraia - Golden Star City Resort προς το Ktima Xristidi;",
+      "label_en": "On the wedding day (Friday, Sept. 4th), would you like to use a shuttle from Peraia - Golden Star City Resort to Ktima Xristidi?",
+      "label_fr": "Le jour du mariage (vendredi 4 sept.) souhaitez-vous utiliser une navette de Peraia - Golden Star City Resort à Ktima Xristidi ?",
+      "type": "single",
+      "id": "shuttle",
+      "options": [
+        {
+          "value": "No",
+          "label_fr": "Non",
+          "label_en": "No",
+          "label_el": "Όχι"
+        },
+        {
+          "value": "Yes",
+          "label_fr": "Oui",
+          "label_en": "Yes",
+          "label_el": "Ναι"
+        }
       ]
     }
   ]
