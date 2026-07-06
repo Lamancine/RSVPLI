@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyjCXaTB9ooVMQ5fB76pWTs3s0wWAGtTheIuEorhXFFRiJJD9oGpQqih3PzcSZkRLks/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8SDSLYRjaoPYKOFAgppsOn7TDdnf-L0kih9F2R008xCKdNUmQ7VhY2b0zN-t0SqRR/exec";
   const API_TOKEN  = "vf3a9c6d2b8e14f7a9c3d5e6f1a2b4c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4";
   const GUESTLIST_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjPJpjVeFkcCbI5JdyQnn8P5EKpM_xugrpG7OOEmAhmewRw9qRkGlw_VwqltxBiXqQpjKpMNRmuB1s/pub?gid=1976428554&single=true&output=csv";
   const CONFIG_URL = "https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/rsvp_config.json";
