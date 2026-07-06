@@ -22,7 +22,7 @@ const pageTranslations = {
     nav_logout: "Logout",
     
     // Home Page
-    hero_title: "Together Forever",
+    hero_title: "LARA & IOSIF",
     hero_subtitle: "Join us for our wedding celebration",
     hero_date: "February 14th, 2026",
     hero_cta: "RSVP Now",
@@ -166,7 +166,7 @@ const pageTranslations = {
     nav_logout: "Déconnexion",
     
     // Home Page
-    hero_title: "Pour Toujours Ensemble",
+    hero_title: "LARA & IOSIF",
     hero_subtitle: "Rejoignez-nous pour célébrer notre mariage",
     hero_date: "14 février 2026",
     hero_cta: "RSVP Maintenant",
@@ -310,7 +310,7 @@ const pageTranslations = {
     nav_logout: "Αποσύνδεση",
     
     // Home Page
-    hero_title: "Μαζί για Πάντα",
+    hero_title: "LARA & IOSIF",
     hero_subtitle: "Συμμετέχετε στην γιορτή του γάμου μας",
     hero_date: "14 Φεβρουαρίου 2026",
     hero_cta: "RSVP Τώρα",

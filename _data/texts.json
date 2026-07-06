@@ -55,5 +55,29 @@
   "venue_parking_desc_el": "Υπάρχει χώρος στάθμευσης στον χώρο για όλους τους καλεσμένους.",
   "child_free_notice_el": "Αυτός είναι ένας γάμος χωρίς παιδιά. Εκτιμούμε την κατανόησή σας.",
   "venue_shuttle_desc_el": "Σχεδιάζουμε σέρβις μεταφοράς (μετ' επιστροφής) από την Περαία προς το Ktima Xristidi. Αν ενδιαφέρεστε, επιλέξτε την αντίστοιχη επιλογή στη φόρμα RSVP.",
-  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressés, pensez à sélectionner l'option dans le formulaire RSVP."
+  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressés, pensez à sélectionner l'option dans le formulaire RSVP.",
+
+  "hero_title_fr": "LARA & IOSIF",
+  "hero_title_en": "LARA & IOSIF",
+  "hero_title_el": "LARA & IOSIF",
+
+  "wedding_date_fr": "4 SEPTEMBRE 2026",
+  "wedding_date_en": "SEPTEMBER 4, 2026",
+  "wedding_date_el": "4 ΣΕΠΤΕΜΒΡΊΟΥ 2026",
+
+  "faq_heading_fr": "Questions Fréquentes",
+  "faq_heading_en": "Frequently Asked Questions",
+  "faq_heading_el": "Συχνές Ερωτήσεις",
+
+  "accommodation_heading_fr": "Hébergements",
+  "accommodation_heading_en": "Accommodation",
+  "accommodation_heading_el": "Διαμονή",
+
+  "rsvp_heading_fr": "RSVP",
+  "rsvp_heading_en": "RSVP",
+  "rsvp_heading_el": "RSVP",
+
+  "registry_heading_fr": "Liste de Mariage",
+  "registry_heading_en": "Wedding Registry",
+  "registry_heading_el": "Λίστα Γάμου"
 }
