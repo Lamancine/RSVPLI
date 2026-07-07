@@ -39,7 +39,10 @@ const pageTranslations = {
     quick_links_faq: "❓ Questions?",
     quick_links_faq_desc: "Common questions answered to help you prepare.",
     quick_links_faq_btn: "View FAQ",
-    
+    quick_links_registry: "🎁 Wedding Registry",
+    quick_links_registry_desc: "Discover our registry and contribute as you wish.",
+    quick_links_registry_btn: "View Registry",
+
     // Venue Page
     venue_heading: "Our Venue",
     venue_intro: "We've chosen a beautiful location in Thessaloniki for our celebration.",
@@ -183,7 +186,10 @@ const pageTranslations = {
     quick_links_faq: "❓ Des questions?",
     quick_links_faq_desc: "Questions courantes répondues pour vous aider à préparer.",
     quick_links_faq_btn: "Voir FAQ",
-    
+    quick_links_registry: "🎁 Liste de Mariage",
+    quick_links_registry_desc: "Découvrez notre liste de mariage et contribuez selon vos envies.",
+    quick_links_registry_btn: "Voir la liste",
+
     // Venue Page
     venue_heading: "Notre Lieu",
     venue_intro: "Nous avons choisi un beau lieu à Thessalonique pour notre célébration.",
@@ -327,7 +333,10 @@ const pageTranslations = {
     quick_links_faq: "❓ Ερωτήσεις;",
     quick_links_faq_desc: "Συνήθη ερωτήματα που απαντώνται για να σας βοηθήσουν να προετοιμαστείτε.",
     quick_links_faq_btn: "Δείτε FAQ",
-    
+    quick_links_registry: "🎁 Λίστα Γάμου",
+    quick_links_registry_desc: "Δείτε τη λίστα γάμου μας και συνεισφέρετε όπως επιθυμείτε.",
+    quick_links_registry_btn: "Δείτε τη λίστα",
+
     // Venue Page
     venue_heading: "Ο Χώρος μας",
     venue_intro: "Έχουμε επιλέξει ένα όμορφο χώρο στη Θεσσαλονίκη για την γιορτή μας.",

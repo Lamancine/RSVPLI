@@ -70,7 +70,8 @@
       "question_en": "Is there a gift registry?",
       "answer_en": "Your presence is the greatest gift!\nHowever, if you wish to give a gift, we have set up wedding registry where you can chip in for any amount you wish.",
       "question_el": "Υπάρχει λίστα δώρων;",
-      "answer_el": "Η παρουσία σας είναι το μεγαλύτερο δώρο για μας!\nΩστόσο, αν θέλετε να κάνετε κάποιο δώρο, έχουμε δημιουργήσει μία λίστα γάμου όπου μπορείτε να συνεισφέρετε όπως επιθυμείτε."
+      "answer_el": "Η παρουσία σας είναι το μεγαλύτερο δώρο για μας!\nΩστόσο, αν θέλετε να κάνετε κάποιο δώρο, έχουμε δημιουργήσει μία λίστα γάμου όπου μπορείτε να συνεισφέρετε όπως επιθυμείτε.",
+      "show_registry_btn": true
     },
     {
       "question_fr": "Puis-je amener un invité supplémentaire ?",

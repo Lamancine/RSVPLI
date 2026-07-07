@@ -73,5 +73,14 @@
   "venue_parking_desc_el": "Υπάρχει χώρος στάθμευσης στον χώρο για όλους τους καλεσμένους.",
   "child_free_notice_el": "Αυτός είναι ένας γάμος χωρίς παιδιά. Εκτιμούμε την κατανόησή σας.",
   "venue_shuttle_desc_el": "Σχεδιάζουμε σέρβις μεταφοράς (μετ' επιστροφής) από την Περαία προς το Ktima Xristidi. Αν ενδιαφέρεστε, επιλέξτε την αντίστοιχη επιλογή στη φόρμα RSVP.",
-  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressés, pensez à sélectionner l'option dans le formulaire RSVP."
+  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressés, pensez à sélectionner l'option dans le formulaire RSVP.",
+  "quick_links_registry_fr": "🎁 Liste de Mariage",
+  "quick_links_registry_en": "🎁 Wedding Registry",
+  "quick_links_registry_el": "🎁 Λίστα Γάμου",
+  "quick_links_registry_desc_fr": "Découvrez notre liste de mariage et contribuez selon vos envies.",
+  "quick_links_registry_desc_en": "Discover our wedding registry and contribute as you wish.",
+  "quick_links_registry_desc_el": "Δείτε τη λίστα γάμου μας και συνεισφέρετε όπως επιθυμείτε.",
+  "quick_links_registry_btn_fr": "Voir la liste",
+  "quick_links_registry_btn_en": "View Registry",
+  "quick_links_registry_btn_el": "Δείτε τη λίστα"
 }

@@ -246,17 +246,24 @@
       if (!faqData) return;
       const container = document.getElementById('faqContainer');
       const suffix = lang === 'el' ? '_el' : (lang === 'fr' ? '_fr' : '_en');
-      container.innerHTML = faqData.items.map(item => `
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            <span>${item['question' + suffix] || item.question_fr}</span>
-            <span class="faq-toggle">+</span>
-          </button>
-          <div class="faq-answer" style="display:none;">
-            <p>${(item['answer' + suffix] || item.answer_fr).replace(/\n/g, '<br>')}</p>
-          </div>
-        </div>
-      `).join('');
+      const t = (typeof pageTranslations !== 'undefined' && pageTranslations[lang]) ? pageTranslations[lang] : {};
+      const registryBtnLabel = t.registry_visit_btn || 'Voir la liste';
+      container.innerHTML = faqData.items.map(item => {
+        const registryBtn = item.show_registry_btn
+          ? `<div style="margin-top:20px;"><a href="registry.html" class="link-btn" style="display:inline-block;font-size:12px;padding:10px 28px;">${registryBtnLabel}</a></div>`
+          : '';
+        return `
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(this)">
+              <span>${item['question' + suffix] || item.question_fr}</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-answer" style="display:none;">
+              <p>${(item['answer' + suffix] || item.answer_fr).replace(/\n/g, '<br>')}</p>
+              ${registryBtn}
+            </div>
+          </div>`;
+      }).join('');
     }
 
     fetch('https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/faq.json?_=' + Date.now())
