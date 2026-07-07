@@ -1106,6 +1106,15 @@ p {
   text-decoration: underline;
 }
 
+.faq-answer .link-btn {
+  color: #fff;
+}
+
+.faq-answer .link-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
