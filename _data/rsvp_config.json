@@ -140,7 +140,7 @@
     {
       "enabled": true,
       "followup_trigger": "Yes",
-      "followup_label_el": "Για ποια διαδρομή θέλετε το λεωφορείο;",
+      "followup_label_el": "Για ποια διαδρομή θέλετε το ιδιωτικό λεωφορείο;",
       "followup_label_en": "Which trip(s) would you like the shuttle for?",
       "followup_label_fr": "Pour quel(s) trajet(s) souhaitez-vous la navette ?",
       "followup_options": [
@@ -160,10 +160,10 @@
           "value": "Return only",
           "label_fr": "Retour seulement",
           "label_en": "Return only",
-          "label_el": "Μόνο επιστροφή"
+          "label_el": "Μόνο επιστροφή από τον χώρο"
         }
       ],
-      "label_el": "Την ημέρα του γάμου (Παρασκευή, 4 Σεπτ.) θα θέλατε να χρησιμοποιήσετε λεωφορείο από το Peraia - Golden Star City Resort προς το Κτήμα Χρηστίδη;",
+      "label_el": "Την ημέρα του γάμου (Παρασκευή, 4 Σεπτ.) θα θέλατε να χρησιμοποιήσετε ιδιωτικό λεωφορείο μεταφοράς από το Peraia - Golden Star City Resort προς το Κτήμα Χρηστίδη;",
       "label_en": "On the wedding day (Friday, Sept. 4th), would you like to use a shuttle from Peraia - Golden Star City Resort to Ktima Xristidi?",
       "label_fr": "Le jour du mariage (vendredi 4 sept.) souhaitez-vous utiliser une navette de Peraia - Golden Star City Resort à Ktima Xristidi ?",
       "type": "single",
