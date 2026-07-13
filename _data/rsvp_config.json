@@ -213,7 +213,7 @@
       "label_en": "Shuttle SKG - Venue (for greeks only)",
       "label_fr": "Navette SKG - Ktima Xristidi (pour les grecs uniquement)",
       "type": "single",
-      "id": "Shuttle SKG",
+      "id": "Shuttle_SKG",
       "options": [
         {
           "exclusive": false,
