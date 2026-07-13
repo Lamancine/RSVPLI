@@ -182,6 +182,43 @@
           "label_el": "Ναι"
         }
       ]
+    },
+    {
+      "enabled": true,
+      "followup_trigger": "Ναι",
+      "followup_label_el": "Which way ?",
+      "followup_options": [
+        {
+          "value": "Aller - retour",
+          "label_el": "Aller-retour",
+          "label_en": " ",
+          "label_fr": " "
+        },
+        {
+          "value": "One way to the venue",
+          "label_el": "To the venue",
+          "label_en": " ",
+          "label_fr": " "
+        },
+        {
+          "value": "Return",
+          "label_el": "Return",
+          "label_fr": " ",
+          "label_en": " "
+        }
+      ],
+      "label_el": "XXXldkdks",
+      "type": "single",
+      "id": "Shuttle SKG",
+      "options": [
+        {
+          "exclusive": false,
+          "has_text_input": false,
+          "value": "Yes",
+          "label_el": "Ναι"
+        }
+      ],
+      "required": false
     }
   ]
 }
