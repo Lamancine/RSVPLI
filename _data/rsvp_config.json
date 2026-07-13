@@ -185,7 +185,7 @@
     },
     {
       "enabled": true,
-      "followup_trigger": "Ναι",
+      "followup_trigger": "Yes",
       "followup_label_el": "Which way ?",
       "followup_options": [
         {
@@ -207,7 +207,7 @@
           "label_en": " "
         }
       ],
-      "label_el": "XXXldkdks",
+      "label_el": "Shuttle from SKG to Ktima Xristidi ? ",
       "type": "single",
       "id": "Shuttle SKG",
       "options": [
