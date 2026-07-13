@@ -83,7 +83,9 @@ function doPost(e) {
       'Guest2Name','Guest2Brunch','Guest2Shuttle','Guest2Email','Guest2MainCourse','Guest2Languages','Guest2Diet',
       'GuestIndex','GuestName','Brunch','Shuttle','Email','MainCourse','MainCourseTick','Languages','Diet','Message','LanguageUI',
       'Guest1ShuttleDirection','Guest2ShuttleDirection','ShuttleDirection',
-      'Guest1ShuttleSKGPhone','Guest2ShuttleSKGPhone','ShuttleSKGPhone'
+      'Guest1ShuttleSKG','Guest1ShuttleSKGDirection','Guest1ShuttleSKGPhone',
+      'Guest2ShuttleSKG','Guest2ShuttleSKGDirection','Guest2ShuttleSKGPhone',
+      'ShuttleSKG','ShuttleSKGDirection','ShuttleSKGPhone'
     ];
 
     const existingHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn() || headerRow.length).getValues()[0];
@@ -139,9 +141,13 @@ function doPost(e) {
         g1.shuttleDirection || '',
         g2.shuttleDirection || '',
         '',  // ShuttleDirection (per-guest, unused in collapsed row)
+        g1.shuttleSKG || '',
+        g1.shuttleSKGDirection || '',
         g1.shuttleSKGPhone || '',
+        g2.shuttleSKG || '',
+        g2.shuttleSKGDirection || '',
         g2.shuttleSKGPhone || '',
-        ''   // ShuttleSKGPhone (per-guest, unused in collapsed row)
+        '', '', ''  // ShuttleSKG/Direction/Phone (per-guest, unused in collapsed row)
       ]);
     } else if (guests.length > 2) {
       // One row per guest for larger families
@@ -170,8 +176,10 @@ function doPost(e) {
           '', // Guest1ShuttleDirection (N/A for per-guest rows)
           '', // Guest2ShuttleDirection (N/A for per-guest rows)
           guest.shuttleDirection || '',
-          '', // Guest1ShuttleSKGPhone (N/A for per-guest rows)
-          '', // Guest2ShuttleSKGPhone (N/A for per-guest rows)
+          '', '', '', // Guest1ShuttleSKG/Direction/Phone (N/A for per-guest rows)
+          '', '', '', // Guest2ShuttleSKG/Direction/Phone (N/A for per-guest rows)
+          guest.shuttleSKG || '',
+          guest.shuttleSKGDirection || '',
           guest.shuttleSKGPhone || ''
         ]);
       });
