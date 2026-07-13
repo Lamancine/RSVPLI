@@ -185,7 +185,7 @@
     },
     {
       "enabled": true,
-      "followup_trigger": "Yes",
+      "followup_trigger": "Oui",
       "followup_label_el": "Which way ?",
       "followup_label_en": "Trips",
       "followup_label_fr": "Trajets",
