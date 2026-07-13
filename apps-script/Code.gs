@@ -94,6 +94,9 @@ function doPost(e) {
       sheet.getRange(1, 1, 1, headerRow.length).setValues([headerRow]);
     }
 
+    Logger.log('Payload reçu: ' + JSON.stringify(payload));
+    Logger.log('Guests: ' + JSON.stringify(payload.guests));
+
     const rows = [];
     const timestamp = new Date();
 
