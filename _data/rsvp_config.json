@@ -187,27 +187,31 @@
       "enabled": true,
       "followup_trigger": "Yes",
       "followup_label_el": "Which way ?",
+      "followup_label_en": "Trips",
+      "followup_label_fr": "Trajets",
       "followup_options": [
         {
           "value": "Aller - retour",
           "label_el": "Aller-retour",
-          "label_en": " ",
-          "label_fr": " "
+          "label_en": " Round trip",
+          "label_fr": " Aller - retour"
         },
         {
           "value": "One way to the venue",
           "label_el": "To the venue",
-          "label_en": " ",
-          "label_fr": " "
+          "label_en": "One way to the venue",
+          "label_fr": " Aller"
         },
         {
           "value": "Return",
           "label_el": "Return",
-          "label_fr": " ",
-          "label_en": " "
+          "label_fr": " Retour",
+          "label_en": "Return"
         }
       ],
       "label_el": "Shuttle from SKG to Ktima Xristidi ? ",
+      "label_en": "Shuttle",
+      "label_fr": "Navette",
       "type": "single",
       "id": "Shuttle SKG",
       "options": [
@@ -216,8 +220,8 @@
           "has_text_input": false,
           "value": "Yes",
           "label_el": "Ναι",
-          "label_fr": " ",
-          "label_en": " "
+          "label_fr": " Oui",
+          "label_en": "Yes"
         },
         {
           "exclusive": false,
