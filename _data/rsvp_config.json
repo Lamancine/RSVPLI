@@ -210,26 +210,26 @@
         }
       ],
       "label_el": "Shuttle from SKG to Ktima Xristidi ? ",
-      "label_en": "Shuttle",
-      "label_fr": "Navette",
+      "label_en": "Shuttle SKG - Venue (for greeks only)",
+      "label_fr": "Navette SKG - Ktima Xristidi (pour les grecs uniquement)",
       "type": "single",
       "id": "Shuttle SKG",
       "options": [
         {
           "exclusive": false,
           "has_text_input": false,
-          "value": "Yes",
-          "label_el": "Ναι",
-          "label_fr": " Oui",
-          "label_en": "Yes"
+          "value": "No",
+          "label_el": "Οχι",
+          "label_fr": "Non",
+          "label_en": "No"
         },
         {
           "exclusive": false,
           "has_text_input": false,
-          "value": "No",
-          "label_el": "Οχι",
-          "label_fr": " Non",
-          "label_en": "No"
+          "value": "Yes",
+          "label_el": "Ναι",
+          "label_fr": "Oui",
+          "label_en": "Yes"
         }
       ],
       "required": false
