@@ -24,6 +24,9 @@
       validation_required: f => `Please answer: ${f}`,
       validation_shuttle_email_required: "Please provide your email address for the shuttle.",
       validation_shuttle_direction_required: "Please select a shuttle trip direction.",
+      validation_shuttle_skg_phone_required: "Please provide your phone number for the SKG shuttle.",
+      shuttle_skg_phone_label: "Your phone number (for the SKG shuttle)",
+      shuttle_skg_phone_placeholder: "Phone number",
       review_title: "Review your RSVP",
       review_sub: "Please confirm your details before sending.",
       attendance_label: "Attendance",
@@ -53,6 +56,9 @@
       validation_required: f => `Veuillez répondre à : ${f}`,
       validation_shuttle_email_required: "Veuillez fournir votre e-mail pour la navette.",
       validation_shuttle_direction_required: "Veuillez choisir un trajet pour la navette.",
+      validation_shuttle_skg_phone_required: "Veuillez fournir votre numéro de téléphone pour la navette SKG.",
+      shuttle_skg_phone_label: "Votre numéro de téléphone (navette SKG)",
+      shuttle_skg_phone_placeholder: "Numéro de téléphone",
       review_title: "Vérification de votre RSVP",
       review_sub: "Merci de confirmer vos informations avant l'envoi.",
       attendance_label: "Présence",
@@ -82,6 +88,9 @@
       validation_required: f => `Παρακαλώ απαντήστε: ${f}`,
       validation_shuttle_email_required: "Παρακαλώ δώστε το email σας για το shuttle.",
       validation_shuttle_direction_required: "Παρακαλώ επιλέξτε διαδρομή για το shuttle.",
+      validation_shuttle_skg_phone_required: "Παρακαλώ δώστε τον αριθμό τηλεφώνου σας για το shuttle SKG.",
+      shuttle_skg_phone_label: "Αριθμός τηλεφώνου (shuttle SKG)",
+      shuttle_skg_phone_placeholder: "Αριθμός τηλεφώνου",
       review_title: "Έλεγχος της απάντησής σας",
       review_sub: "Επιβεβαιώστε τα στοιχεία πριν την αποστολή.",
       attendance_label: "Παρουσία",
@@ -258,6 +267,15 @@
         html += `<input type="email" class="shuttleEmail shuttleEmail-${guestIdx}" placeholder="${esc(dict.shuttle_email_placeholder)}" value="${esc(familyEmail)}">`;
         html += `</div>`;
       }
+
+      // Shuttle SKG phone (special)
+      if (sid === "Shuttle_SKG") {
+        const dict = d();
+        html += `<div class="shuttle-skg-phone-wrapper" id="shuttle-skg-phone-${guestIdx}" style="display:none">`;
+        html += `<div class="section-sub-label">${esc(dict.shuttle_skg_phone_label)}</div>`;
+        html += `<input type="tel" class="shuttleSKGPhone shuttleSKGPhone-${guestIdx}" placeholder="${esc(dict.shuttle_skg_phone_placeholder)}">`;
+        html += `</div>`;
+      }
     }
 
     const note = section["note_" + lang] || section.note_en || "";
@@ -307,6 +325,7 @@
       } else if (section.type === "single" && section.followup_trigger) {
         const followupEl    = document.getElementById(`followup-${sid}-${guestIdx}`);
         const emailWrapper  = sid === "shuttle" ? document.getElementById(`shuttle-email-${guestIdx}`) : null;
+        const phoneWrapper  = sid === "Shuttle_SKG" ? document.getElementById(`shuttle-skg-phone-${guestIdx}`) : null;
         document.querySelectorAll(`.opt-radio-${sid}-${guestIdx}`).forEach(radio => {
           radio.addEventListener("change", () => {
             const show = radio.value === section.followup_trigger && radio.checked;
@@ -318,6 +337,7 @@
                 if (emailInput && !emailInput.value.trim()) emailInput.value = getGuestEmail(currentGuests);
               }
             }
+            if (phoneWrapper) phoneWrapper.style.display = show ? "block" : "none";
           });
         });
       }
@@ -331,7 +351,7 @@
       const gid = block.dataset.guestIdx;
       state[gid] = {
         name: block.querySelector(".guestName")?.value || "",
-        checks: {}, radios: {}, followupRadios: {}, texts: {}, email: ""
+        checks: {}, radios: {}, followupRadios: {}, texts: {}, email: "", phone: ""
       };
       block.querySelectorAll(".opt-check:checked").forEach(el => {
         const m = el.className.match(/opt-(\S+?)-(\d+)/);
@@ -351,6 +371,8 @@
       });
       const emailEl = block.querySelector(".shuttleEmail");
       if (emailEl) state[gid].email = emailEl.value;
+      const phoneEl = block.querySelector(".shuttleSKGPhone");
+      if (phoneEl) state[gid].phone = phoneEl.value;
     });
     return state;
   }
@@ -381,6 +403,8 @@
       });
       const emailEl = block.querySelector(".shuttleEmail");
       if (emailEl && s.email) emailEl.value = s.email;
+      const phoneEl = block.querySelector(".shuttleSKGPhone");
+      if (phoneEl && s.phone) phoneEl.value = s.phone;
     });
   }
 
@@ -522,6 +546,10 @@
     const emailEl = document.getElementById(`shuttle-email-${guestIdx}`)?.querySelector(".shuttleEmail");
     result.email = emailEl ? emailEl.value.trim() : "";
 
+    // Shuttle SKG phone
+    const phoneEl = document.getElementById(`shuttle-skg-phone-${guestIdx}`)?.querySelector(".shuttleSKGPhone");
+    result.shuttleSKGPhone = phoneEl ? phoneEl.value.trim() : "";
+
     return result;
   }
 
@@ -533,7 +561,8 @@
       brunch:          rawData.brunch    || "",
       shuttle:         rawData.shuttle   || "",
       shuttleDirection:rawData.shuttle_direction || "",
-      email:           rawData.email     || "",
+      email:           rawData.email          || "",
+      shuttleSKGPhone: rawData.shuttleSKGPhone || "",
       mainCourse:      rawData.main_course || "",
       mainCourseTick:  rawData.main_course ? "Yes" : "No",
       _sections:       rawData  // used for review display, stripped before API send
@@ -583,6 +612,12 @@
         if (!raw.email)               return { error: dict.validation_shuttle_email_required };
         if ((shuttleSec.followup_options || []).length && !raw.shuttle_direction)
           return { error: dict.validation_shuttle_direction_required };
+      }
+
+      // Shuttle SKG validation
+      const shuttleSKGSec = (rsvpConfig?.sections || []).find(s => s.id === "Shuttle_SKG");
+      if (shuttleSKGSec && shuttleSKGSec.enabled !== false && raw.Shuttle_SKG === "Yes") {
+        if (!raw.shuttleSKGPhone) return { error: dict.validation_shuttle_skg_phone_required };
       }
 
       guests.push(buildGuestPayload(raw));
@@ -641,6 +676,14 @@
             rows.push(`<div class="review-row">
               <div class="review-label">${esc(dict.shuttle_email_label)}:</div>
               <div class="review-value">${esc(g.email)}</div>
+            </div>`);
+          }
+
+          // Shuttle SKG phone
+          if (sid === "Shuttle_SKG" && g.shuttleSKGPhone) {
+            rows.push(`<div class="review-row">
+              <div class="review-label">${esc(dict.shuttle_skg_phone_label)}:</div>
+              <div class="review-value">${esc(g.shuttleSKGPhone)}</div>
             </div>`);
           }
         });

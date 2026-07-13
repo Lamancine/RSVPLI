@@ -82,7 +82,8 @@ function doPost(e) {
       'Guest1Name','Guest1Brunch','Guest1Shuttle','Guest1Email','Guest1MainCourse','Guest1Languages','Guest1Diet',
       'Guest2Name','Guest2Brunch','Guest2Shuttle','Guest2Email','Guest2MainCourse','Guest2Languages','Guest2Diet',
       'GuestIndex','GuestName','Brunch','Shuttle','Email','MainCourse','MainCourseTick','Languages','Diet','Message','LanguageUI',
-      'Guest1ShuttleDirection','Guest2ShuttleDirection','ShuttleDirection'
+      'Guest1ShuttleDirection','Guest2ShuttleDirection','ShuttleDirection',
+      'Guest1ShuttleSKGPhone','Guest2ShuttleSKGPhone','ShuttleSKGPhone'
     ];
 
     const existingHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn() || headerRow.length).getValues()[0];
@@ -137,7 +138,10 @@ function doPost(e) {
 
         g1.shuttleDirection || '',
         g2.shuttleDirection || '',
-        ''  // ShuttleDirection (per-guest, unused in collapsed row)
+        '',  // ShuttleDirection (per-guest, unused in collapsed row)
+        g1.shuttleSKGPhone || '',
+        g2.shuttleSKGPhone || '',
+        ''   // ShuttleSKGPhone (per-guest, unused in collapsed row)
       ]);
     } else if (guests.length > 2) {
       // One row per guest for larger families
@@ -165,7 +169,10 @@ function doPost(e) {
 
           '', // Guest1ShuttleDirection (N/A for per-guest rows)
           '', // Guest2ShuttleDirection (N/A for per-guest rows)
-          guest.shuttleDirection || ''
+          guest.shuttleDirection || '',
+          '', // Guest1ShuttleSKGPhone (N/A for per-guest rows)
+          '', // Guest2ShuttleSKGPhone (N/A for per-guest rows)
+          guest.shuttleSKGPhone || ''
         ]);
       });
     }
