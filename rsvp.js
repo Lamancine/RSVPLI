@@ -7,7 +7,7 @@
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx8SDSLYRjaoPYKOFAgppsOn7TDdnf-L0kih9F2R008xCKdNUmQ7VhY2b0zN-t0SqRR/exec";
   const API_TOKEN  = "vf3a9c6d2b8e14f7a9c3d5e6f1a2b4c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4";
   const GUESTLIST_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjPJpjVeFkcCbI5JdyQnn8P5EKpM_xugrpG7OOEmAhmewRw9qRkGlw_VwqltxBiXqQpjKpMNRmuB1s/pub?gid=1976428554&single=true&output=csv";
-  const CONFIG_URL = "https://raw.githubusercontent.com/Lamancine/RSVPLI/main/_data/rsvp_config.json";
+  const CONFIG_URL = "/_data/rsvp_config.json";
 
   // ── Translations (framework strings only – question labels come from rsvp_config.json) ──
   const I18N = {
@@ -196,7 +196,7 @@
 
   async function loadRsvpConfig() {
     try {
-      const r = await fetch(CONFIG_URL + "?_=" + Date.now());
+      const r = await fetch(CONFIG_URL + "?_=" + Date.now());  // bypass browser cache
       rsvpConfig = await r.json();
     } catch (e) { rsvpConfig = null; }
   }
@@ -306,7 +306,7 @@
 
       } else if (section.type === "single" && section.followup_trigger) {
         const followupEl    = document.getElementById(`followup-${sid}-${guestIdx}`);
-        const emailWrapper  = document.getElementById(`shuttle-email-${guestIdx}`);
+        const emailWrapper  = sid === "shuttle" ? document.getElementById(`shuttle-email-${guestIdx}`) : null;
         document.querySelectorAll(`.opt-radio-${sid}-${guestIdx}`).forEach(radio => {
           radio.addEventListener("change", () => {
             const show = radio.value === section.followup_trigger && radio.checked;
