@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwC_1ntZ-2sQmDAzXQNcYypI9eEK2m8c-O9VtdJuAMhJnUDWOzh7k1gNbc19PW4bdWO/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznr-qn1vsg4TU_xTgKfRz52mqYN9JOIWcoAZl1QEmhbuWsb6Pn_jxKse-JUitCE-nS/exec";
   const API_TOKEN  = "vf3a9c6d2b8e14f7a9c3d5e6f1a2b4c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4";
   const GUESTLIST_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjPJpjVeFkcCbI5JdyQnn8P5EKpM_xugrpG7OOEmAhmewRw9qRkGlw_VwqltxBiXqQpjKpMNRmuB1s/pub?gid=1976428554&single=true&output=csv";
   const CONFIG_URL = "/_data/rsvp_config.json";
