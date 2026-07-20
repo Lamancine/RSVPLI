@@ -124,6 +124,8 @@ const pageTranslations = {
     registry_thank_you: "Your presence is truly our greatest gift. However, for those who have asked, we have put together a small registry. You are absolutely not obligated to participate — your being there is more than enough.",
     registry_code_label: "Access code",
     registry_code_desc: "Access code to copy/paste or type to access the wedding registry",
+    registry_copy_btn: "Copy",
+    registry_copied: "Copied!",
     registry_visit_btn: "Visit the Registry",
 
     rsvp_heading: "RSVP",
@@ -272,6 +274,8 @@ const pageTranslations = {
     registry_thank_you: "Votre présence est notre plus beau cadeau. Cependant, pour ceux qui nous ont posé la question, nous avons constitué une petite liste. Vous n'êtes absolument pas obligés d'y participer — être là avec nous est déjà tout ce qu'il nous faut.",
     registry_code_label: "Code d'accès",
     registry_code_desc: "Code d'accès à copier/coller ou à taper pour accéder à la liste de mariage",
+    registry_copy_btn: "Copier",
+    registry_copied: "Copié !",
     registry_visit_btn: "Voir la liste",
 
     rsvp_heading: "RSVP",
@@ -420,6 +424,8 @@ const pageTranslations = {
     registry_thank_you: "Η παρουσία σας είναι το πιο πολύτιμο δώρο μας. Ωστόσο, για όσους μας ρώτησαν, έχουμε φτιάξει μια μικρή λίστα. Δεν είστε καθόλου υποχρεωμένοι να συμμετάσχετε — το να είστε εκεί μαζί μας είναι ό,τι χρειαζόμαστε.",
     registry_code_label: "Κωδικός πρόσβασης",
     registry_code_desc: "Κωδικός πρόσβασης για αντιγραφή/επικόλληση ή πληκτρολόγηση για πρόσβαση στη λίστα γάμου",
+    registry_copy_btn: "Αντιγραφή",
+    registry_copied: "Αντιγράφηκε!",
     registry_visit_btn: "Δείτε τη λίστα",
 
     rsvp_heading: "RSVP",
