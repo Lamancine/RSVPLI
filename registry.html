@@ -121,6 +121,15 @@
 
   <style>
     @media (max-width: 768px) { .registry-copy-btn { display: none !important; } }
+    @media (max-width: 480px) {
+      #registryCodeBox {
+        font-size: 18px !important;
+        letter-spacing: 4px !important;
+        padding: 14px 16px !important;
+        max-width: calc(100vw - 48px);
+        box-sizing: border-box;
+      }
+    }
   </style>
 
   <script src="i18n.js"></script>
@@ -149,16 +158,23 @@
         }, 2000);
       }
 
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText('LARAIOSIF4').then(showFeedback);
-      } else {
-        const el = document.createElement('textarea');
+      function fallbackCopy() {
+        const el = document.createElement('input');
         el.value = 'LARAIOSIF4';
+        el.setAttribute('readonly', '');
+        el.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px;';
         document.body.appendChild(el);
+        el.focus();
         el.select();
-        document.execCommand('copy');
+        el.setSelectionRange(0, 99999);
+        try { document.execCommand('copy'); showFeedback(); } catch (e) {}
         document.body.removeChild(el);
-        showFeedback();
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText('LARAIOSIF4').then(showFeedback).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
       }
     }
 
