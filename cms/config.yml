@@ -249,6 +249,16 @@ collections:
             label: "Λίστα Γάμου — Μήνυμα ευχαριστίας (Ελληνικά)"
             widget: "text"
 
+          - name: "registry_code_desc_fr"
+            label: "Liste de Mariage — Description du code d'accès (Français)"
+            widget: "string"
+          - name: "registry_code_desc_en"
+            label: "Wedding Registry — Access code description (English)"
+            widget: "string"
+          - name: "registry_code_desc_el"
+            label: "Λίστα Γάμου — Περιγραφή κωδικού πρόσβασης (Ελληνικά)"
+            widget: "string"
+
           # PIED DE PAGE
           - name: "footer_text_fr"
             label: "Pied de page (Français)"

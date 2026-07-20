@@ -2,11 +2,11 @@
   "items": [
     {
       "question_fr": "Quand et où est le mariage ?",
-      "answer_fr": "Notre mariage aura lieu le vendredi 4 septembre 2026 à Ktima Xristidi, Thessalonique, Grèce.\nArrivez à 17h30 pour un verre de bienvenue.\nLa cérémonie commence à 18h00, suivi d'un cocktail, diner et soirée à partir de 19h00.",
+      "answer_fr": "Notre mariage aura lieu le vendredi 4 septembre 2026 à Ktima Xristidi, Thessalonique, Grèce.\nArrivez à 17h30 pour un verre de bienvenue.\nLa cérémonie commence à 18h00, suivi du vin d'honneur, diner et soirée à partir de 19h00.",
       "question_en": "When and where is the wedding?",
-      "answer_en": "Our wedding will be held on Friday, September 4th, 2026 at Ktima Xristidi, Thessaloniki, Greece.\nGuests should arrive at 5.30 PM.\nThe ceremony begins at 6:00 PM, followed by cocktail, dinner and party from 7:00 PM.",
+      "answer_en": "Our wedding will be held on Friday, September 4th, 2026 at Ktima Xristidi, Thessaloniki, Greece.\nGuests should arrive at 5.30 PM.\nThe ceremony begins at 6:00 PM, followed by <em>vin d'honneur</em>, dinner and party from 7:00 PM.",
       "question_el": "Πότε και πού είναι ο γάμος;",
-      "answer_el": "Ο γάμος μας θα πραγματοποιηθεί την Παρασκευή 4 Σεπτεμβρίου 2026 στο Κτήμα Χρηστίδη στη Θεσσαλονίκη.\nΟι επισκέπτες θα πρέπει να φτάσουν στις 17:30.\nΗ τελετή ξεκινά στις 18:00, ακολουθούμενη από κοκτέιλ, γεύμα και πάρτυ από τις 19:00."
+      "answer_el": "Ο γάμος μας θα πραγματοποιηθεί την Παρασκευή 4 Σεπτεμβρίου 2026 στο Κτήμα Χρηστίδη στη Θεσσαλονίκη.\nΟι επισκέπτες θα πρέπει να φτάσουν στις 17:30.\nΗ τελετή ξεκινά στις 18:00, ακολουθούμενη από <em>vin d'honneur</em>, γεύμα και πάρτυ από τις 19:00."
     },
     {
       "question_fr": "Quelle est la date limite de RSVP ?",

@@ -237,7 +237,13 @@
     let venueBoxesData = null;
 
     function nl2br(str) {
-      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+      return str
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/\n/g,'<br>')
+        .replace(/&lt;em&gt;/g,'<em>')
+        .replace(/&lt;\/em&gt;/g,'</em>');
     }
 
     function renderVenueBoxes(lang) {

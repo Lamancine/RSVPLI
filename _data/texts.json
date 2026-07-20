@@ -34,7 +34,7 @@
   "quick_links_faq_btn_en": "View FAQ",
   "quick_links_venue_desc_el": "Ανακαλύψτε τον χώρο όπου θα γίνει η γιορτή μας.",
   "story_heading_el": "💍 Two rings to rule them all 💍",
-  "venue_cocktail_time_el": "Κοκτέιλ: 19:00",
+  "venue_cocktail_time_el": "Vin d'honneur: 19:00",
   "venue_ceremony_time_en": "Ceremony: 6:00 PM",
   "welcome_text_2_fr": "Consultez les informations sur le lieu, les hébergements et la FAQ. \nN'oubliez pas de confirmer votre présence sur la page RSVP !",
   "quick_links_accommodation_btn_el": "Περιηγηθείτε στις επιλογές",
@@ -45,7 +45,7 @@
   "quick_links_venue_desc_en": "Discover the venue where our celebration will take place.",
   "quick_links_registry_desc_fr": "Notre liste de mariage : seulement si vous le souhaitez !",
   "story_heading_en": "💍 Two rings to rule them all 💍 ",
-  "venue_cocktail_time_en": "Cocktail: 7:00 PM (followed by diner and party)",
+  "venue_cocktail_time_en": "Vin d'honneur: 7:00 PM (followed by dinner and party)",
   "quick_links_accommodation_desc_el": "Βρείτε καταλύματα στην Περαία, 15 λεπτά από τον χώρο.",
   "quick_links_faq_btn_fr": "Voir FAQ",
   "quick_links_accommodation_btn_en": "Browse Options",
@@ -59,7 +59,7 @@
   "quick_links_venue_btn_el": "Μάθετε περισσότερα",
   "story_heading_fr": "💍 Deux anneaux pour les gouverner tous 💍",
   "accommodation_heading_en": "Accommodation",
-  "venue_cocktail_time_fr": "Cocktail : 19:00 (suivi d'un diner et de la soirée)",
+  "venue_cocktail_time_fr": "Vin d'honneur : 19:00 (suivi d'un diner et de la soirée)",
   "quick_links_registry_en": "🎁 Wedding Registry",
   "hero_title_el": "ΛΑΡΑ & ΙΩΣΗΦ",
   "venue_spaces_desc_el": "Ο χώρος διαθέτει κομψούς εσωτερικούς χώρους και όμορφους εξωτερικούς κήπους.",
@@ -91,5 +91,8 @@
   "venue_parking_desc_el": "Υπάρχει χώρος στάθμευσης στον χώρο για όλους τους καλεσμένους.",
   "child_free_notice_el": "Αυτός είναι ένας γάμος χωρίς παιδιά. Εκτιμούμε την κατανόησή σας.",
   "venue_shuttle_desc_el": "Σχεδιάζουμε σέρβις μεταφοράς (μετ' επιστροφής) από την Περαία προς το Ktima Xristidi. Αν ενδιαφέρεστε, επιλέξτε την αντίστοιχη επιλογή στη φόρμα RSVP.",
-  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressés, pensez à sélectionner l'option dans le formulaire RSVP."
+  "venue_description_fr": "Ktima Xristidi est un domaine de mariage à Thessalonique, avec des espaces intérieurs et de jardins extérieurs.\nNous prévoyons de mettre en place une navette aller-retour de Peraia vers Ktima Xristidi. Si vous êtes intéressés, pensez à sélectionner l'option dans le formulaire RSVP.",
+  "registry_code_desc_fr": "Code d'accès à copier/coller ou à taper pour accéder à la liste de mariage",
+  "registry_code_desc_en": "Access code to copy/paste or type to access the wedding registry",
+  "registry_code_desc_el": "Κωδικός πρόσβασης για αντιγραφή/επικόλληση ή πληκτρολόγηση για πρόσβαση στη λίστα γάμου"
 }

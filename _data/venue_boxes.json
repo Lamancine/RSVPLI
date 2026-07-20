@@ -14,9 +14,9 @@
       "title_fr": "Programme",
       "title_en": "Timeline",
       "title_el": "Πρόγραμμα",
-      "content_fr": "Arrivée des Invités : 17:30\nCérémonie : 18:00\nCocktail : 19:00 (suivi d'un diner et de la soirée)",
-      "content_en": "Guest Arrival: 5:30 PM\nCeremony: 6:00 PM\nCocktail: 7:00 PM (followed by dinner and party)",
-      "content_el": "Άφιξη Επισκεπτών: 17:30\nΤελετή: 18:00\nΚοκτέιλ: 19:00 (ακολουθούμενο από γεύμα και πάρτυ)"
+      "content_fr": "Arrivée des Invités : 17:30\nCérémonie : 18:00\nVin d'honneur : 19:00 (suivi d'un diner et de la soirée)",
+      "content_en": "Guest Arrival: 5:30 PM\nCeremony: 6:00 PM\n<em>Vin d'honneur</em>: 7:00 PM (followed by dinner and party)",
+      "content_el": "Άφιξη Επισκεπτών: 17:30\nΤελετή: 18:00\n<em>Vin d'honneur</em>: 19:00 (ακολουθούμενο από γεύμα και πάρτυ)"
     },
     {
       "icon": "🚗",
